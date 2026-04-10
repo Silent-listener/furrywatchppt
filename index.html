@@ -295,8 +295,26 @@
                         </div>
                     </div>`,
                 script: "“Furrywatch connects monitoring, insights, and action into one seamless system.”"
-            },
-            {                title: "Three Devices. One Mind.",
+            },            
+            {
+                title: "",
+                icon: ``,
+                content: `
+                    <div class="flex flex-col items-center text-center space-y-12 w-full">
+                        <div class="space-y-3">
+                            <div class="text-lg font-bold text-teal-600 uppercase tracking-widest">Our Mission</div>
+                            <div class="text-3xl font-extrabold text-slate-900 tracking-tight leading-snug">Safety without boundaries.</div>
+                            <p class="text-sm text-slate-500 max-w-md mx-auto leading-relaxed">To erase the distance between you and the life you love. Technology that transforms anxiety into absolute assurance.</p>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="text-lg font-bold text-teal-600 uppercase tracking-widest">Our Vision</div>
+                            <div class="text-3xl font-extrabold text-slate-900 tracking-tight leading-snug">Care, redefined.</div>
+                            <p class="text-sm text-slate-500 max-w-md mx-auto leading-relaxed">A world where every pet is understood, protected, and always just a heartbeat away. Where \u201Calone\u201D never means \u201Cunsafe.\u201D</p>
+                        </div>
+                    </div>`,
+                script: "\u201COur mission is safety without boundaries \u2014 erasing the distance between pet owners and the lives they love. Our vision: a world where every pet is always understood and protected.\u201D"
+            },            
+            {   title: "Three Devices. One Mind.",
                 icon: `<div class="px-3 py-1 bg-slate-100 rounded-full text-xs font-bold text-slate-500 uppercase tracking-widest border border-slate-200">Hardware Features</div>`,
                 content: `
                     <div class="grid grid-cols-3 gap-4 w-full">
@@ -518,12 +536,8 @@
             scriptArea.innerText = slide.script;
 
             contentArea.innerHTML = `
-                <div class="transition-transform duration-500">
-                    ${slide.icon}
-                </div>
-                <h1 class="text-3xl md:text-4xl font-black text-slate-900 leading-tight max-w-2xl">
-                    ${slide.title}
-                </h1>
+                ${slide.icon ? `<div class="transition-transform duration-500">${slide.icon}</div>` : ''}
+                ${slide.title ? `<h1 class="text-3xl md:text-4xl font-black text-slate-900 leading-tight max-w-2xl">${slide.title}</h1>` : ''}
                 <div class="w-full max-w-md">
                     ${slide.content}
                 </div>
