@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Furrywatch Pitch Deck</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Source+Serif+4:ital,wght@1,400&display=swap');
         
@@ -81,27 +82,9 @@
         <!-- Presenter Sidebar -->
         <div class="flex-1 bg-slate-900 text-white p-8 flex flex-col border-l border-slate-800">
             <div class="mb-8">
-                <h3 class="text-[10px] font-bold text-blue-400 uppercase tracking-widest mb-4">Presentation Script</h3>
-                <p id="presenter-script" class="text-lg leading-relaxed text-slate-200 italic font-serif">
+                <h3 class="text-[10px] font-bold text-blue-400 uppercase tracking-widest mb-4"></h3>
+                <div id="presenter-script" class="text-lg leading-relaxed text-slate-200 italic font-serif">
                     <!-- Script injected by JS -->
-                </p>
-            </div>
-            
-            <div class="mt-auto pt-6 border-t border-slate-800">
-                <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4">Investor Resources</h3>
-                <div class="space-y-4">
-                    <div class="flex items-center gap-3 text-xs text-slate-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-600"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
-                        <span>APPA Market Data 2025</span>
-                    </div>
-                    <div class="flex items-center gap-3 text-xs text-slate-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-600"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
-                        <span>Pew Research Mobile Trends</span>
-                    </div>
-                    <div class="flex items-center gap-3 text-xs text-slate-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-600"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
-                        <span>Gallup Workplace Insights</span>
-                    </div>
                 </div>
             </div>
         </div>
@@ -209,16 +192,20 @@
                 title: "A Market Ready to Evolve",
                 icon: `<svg class="w-12 h-12 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 17 6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg>`,
                 content: `
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="bg-green-50 p-6 rounded-xl border border-green-100">
-                            <div class="text-4xl font-black text-green-600">66%</div>
-                            <div class="text-sm text-slate-600 font-medium">Of North American households own pets</div>
+                    <div class="grid grid-cols-3 gap-6 items-stretch">
+                        <div class="bg-teal-50 p-5 rounded-xl border border-teal-100 text-center flex flex-col">
+                            <div class="text-2xl font-black text-teal-600 mb-2">66%</div>
+                            <div class="text-xs text-slate-600 font-medium mt-auto">Of North American households own pets</div>
                         </div>
-                        <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
-                            <div class="text-4xl font-black text-blue-600">$150B+</div>
-                            <div class="text-sm text-slate-600 font-medium">Annual spending on pet industry</div>
+                        <div class="bg-orange-50 p-5 rounded-xl border border-orange-100 text-center flex flex-col">
+                            <div class="text-2xl font-black text-orange-500 mb-2">$150B+</div>
+                            <div class="text-xs text-slate-600 font-medium">Annual spending on pet industry</div>
                         </div>
-                        <div class="col-span-2 text-xs text-slate-400 italic">Source: APPA 2025 State of the Industry Report</div>
+                        <div class="bg-indigo-50 p-5 rounded-xl border border-indigo-100 text-center flex flex-col">
+                            <div class="text-2xl font-black text-indigo-600 mb-2">$20B+</div>
+                            <div class="text-xs text-slate-600 font-medium">Pet tech market potential 2030</div>
+                        </div>
+                        <div class="col-span-3 text-xs text-slate-400 italic text-center">Source: APPA 2025 State of the Industry Report</div>
                     </div>`,
                 script: "“66% of North American households own pets, driving over $150B in annual spending.”"
             },
@@ -366,7 +353,73 @@
                             </ul>
                         </div>
                     </div>`,
-                script: "“Three purpose-built devices — a smart camera, GPS collar, and intelligent crate — working together as one unified system."
+                script: `<div class="not-italic flex justify-center">
+                    <div class="relative mx-auto border-gray-800 bg-gray-800 border-[10px] rounded-[2rem] h-[420px] w-[210px] shadow-2xl">
+                        <div class="h-[24px] w-[2px] bg-gray-800 absolute -left-[12px] top-[50px] rounded-l-lg"></div>
+                        <div class="h-[34px] w-[2px] bg-gray-800 absolute -left-[12px] top-[88px] rounded-l-lg"></div>
+                        <div class="h-[34px] w-[2px] bg-gray-800 absolute -left-[12px] top-[128px] rounded-l-lg"></div>
+                        <div class="h-[48px] w-[2px] bg-gray-800 absolute -right-[12px] top-[100px] rounded-r-lg"></div>
+                        <div class="rounded-[1.5rem] overflow-hidden w-full h-full bg-slate-100 relative">
+                            <div class="bg-teal-600 h-24 p-4 text-white rounded-b-2xl">
+                                <div class="flex justify-between items-center mt-2">
+                                    <div>
+                                        <div class="text-[9px] opacity-80">Good Morning,</div>
+                                        <div class="font-bold text-sm">Buddy is Active</div>
+                                    </div>
+                                    <div class="h-7 w-7 bg-white/20 rounded-full flex items-center justify-center">
+                                        <i data-lucide="dog" class="h-4 w-4"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-3 space-y-3 -mt-6">
+                                <div class="bg-white p-3 rounded-lg shadow-lg flex items-center justify-between">
+                                    <div class="flex items-center space-x-2">
+                                        <div class="bg-green-100 p-1.5 rounded-md">
+                                            <i data-lucide="heart-pulse" class="h-3.5 w-3.5 text-green-600"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-[8px] text-gray-500">Heart Rate</div>
+                                            <div class="font-bold text-xs text-slate-800">78 BPM</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-[8px] text-green-600 bg-green-50 px-1.5 py-0.5 rounded">Normal</div>
+                                </div>
+                                <div class="rounded-lg shadow-lg overflow-hidden h-28 relative">
+                                    <div class="absolute inset-0 flex items-center justify-center bg-center bg-cover bg-no-repeat" style="background-image: url('dog-barking-home.jpg');">
+                                        <i data-lucide="play-circle" class="h-8 w-8 text-white opacity-80"></i>
+                                    </div>
+                                    <div class="absolute bottom-1.5 left-2 text-white text-[8px] font-bold">Living Room Cam</div>
+                                    <div class="absolute bottom-1.5 right-2 flex items-center space-x-0.5 text-white text-[7px] opacity-80">
+                                        <i data-lucide="switch-camera" class="h-3 w-3"></i>
+                                        <span>Change</span>
+                                    </div>
+                                    <div class="absolute top-1.5 right-2 flex items-center space-x-1">
+                                        <div class="h-1.5 w-1.5 bg-red-500 rounded-full animate-pulse"></div>
+                                        <span class="text-[8px] text-white">LIVE</span>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div class="bg-white p-2 rounded-lg shadow border border-slate-100 text-center">
+                                        <i data-lucide="lock" class="h-4 w-4 mx-auto text-indigo-500 mb-1"></i>
+                                        <div class="text-[8px] font-bold text-slate-700">Lock Crate</div>
+                                    </div>
+                                    <div class="bg-white p-2 rounded-lg shadow border border-slate-100 text-center">
+                                        <i data-lucide="fan" class="h-4 w-4 mx-auto text-pink-500 mb-1"></i>
+                                        <div class="text-[8px] font-bold text-slate-700">Ventilation</div>
+                                    </div>
+                                    <div class="bg-white p-2 rounded-lg shadow border border-slate-100 text-center">
+                                        <i data-lucide="utensils" class="h-4 w-4 mx-auto text-pink-500 mb-1"></i>
+                                        <div class="text-[8px] font-bold text-slate-700">Food</div>
+                                    </div>
+                                    <div class="bg-white p-2 rounded-lg shadow border border-slate-100 text-center">
+                                        <i data-lucide="droplet" class="h-4 w-4 mx-auto text-pink-500 mb-1"></i>
+                                        <div class="text-[8px] font-bold text-slate-700">Water</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>`
             },
             {                title: "Powered by Aura Ecosystem",
                 icon: `<svg class="w-12 h-12 text-yellow-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>`,
@@ -527,6 +580,41 @@
                         <div class="text-2xl font-bold text-slate-800">Transforming Pet Care</div>
                     </div>`,
                 script: "“Furrywatch transforms pet care from reactive to intelligent, from distant to connected.”"
+            },
+            {
+                title: "Investor Resources",
+                icon: `<svg class="w-12 h-12 text-slate-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>`,
+                content: `
+                    <div class="space-y-4 w-full">
+                        <a href="#" class="flex items-center gap-4 p-4 bg-slate-50 rounded-xl border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition group">
+                            <div class="h-10 w-10 bg-blue-100 rounded-lg flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5 text-blue-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                            </div>
+                            <div class="text-left">
+                                <div class="text-sm font-bold text-slate-800 group-hover:text-blue-700">APPA Market Data 2025</div>
+                                <div class="text-xs text-slate-500">Industry report on pet market trends</div>
+                            </div>
+                        </a>
+                        <a href="#" class="flex items-center gap-4 p-4 bg-slate-50 rounded-xl border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition group">
+                            <div class="h-10 w-10 bg-green-100 rounded-lg flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5 text-green-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                            </div>
+                            <div class="text-left">
+                                <div class="text-sm font-bold text-slate-800 group-hover:text-green-700">Pew Research Mobile Trends</div>
+                                <div class="text-xs text-slate-500">Smartphone & digital adoption data</div>
+                            </div>
+                        </a>
+                        <a href="#" class="flex items-center gap-4 p-4 bg-slate-50 rounded-xl border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition group">
+                            <div class="h-10 w-10 bg-indigo-100 rounded-lg flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                            </div>
+                            <div class="text-left">
+                                <div class="text-sm font-bold text-slate-800 group-hover:text-indigo-700">Gallup Workplace Insights</div>
+                                <div class="text-xs text-slate-500">Hybrid work & remote trends</div>
+                            </div>
+                        </a>
+                    </div>`,
+                script: "“Here are the key sources backing our market thesis.”"
             }
         ];
 
@@ -541,7 +629,7 @@
 
             // Update Text & Main Content
             counter.innerText = `SLIDE ${currentIndex + 1} / ${slides.length}`;
-            scriptArea.innerText = slide.script;
+            scriptArea.innerHTML = slide.script;
 
             contentArea.innerHTML = `
                 ${slide.icon ? `<div class="transition-transform duration-500">${slide.icon}</div>` : ''}
@@ -555,6 +643,9 @@
             dotIndicators.innerHTML = slides.map((_, i) => `
                 <div class="h-1 rounded-full transition-all ${i === currentIndex ? 'w-4 bg-blue-600' : 'w-1 bg-slate-200'}"></div>
             `).join('');
+
+            // Re-initialize Lucide icons for newly injected HTML
+            if (typeof lucide !== 'undefined') lucide.createIcons();
         }
 
         function nextSlide() {
