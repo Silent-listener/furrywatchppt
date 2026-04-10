@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furrywatch Pitch Deck</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Source+Serif+4:ital,wght@1,400&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .font-serif {
+            font-family: 'Source Serif 4', serif;
+        }
+
+        .animate-spin-slow {
+            animation: spin 20s linear infinite;
+        }
+
+        .animate-reverse-spin {
+            animation: reverse-spin 20s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes reverse-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(-360deg); }
+        }
+
+        .slide-transition {
+            transition: all 0.5s ease-in-out;
+        }
+        
+        .hidden-slide {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-slate-200 min-h-screen p-4 md:p-8 flex flex-col items-center">
+
+    <div class="w-full max-w-5xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row aspect-video">
+        
+        <!-- Main Slide Area -->
+        <div class="flex-[2] p-8 flex flex-col justify-between relative overflow-hidden bg-white">
+            <div class="flex justify-between items-start mb-6">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.7 1h5.9a2 2 0 0 1 2 2v4.5"/><path d="M16 22a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2z"/><path d="M7 13v-3"/><path d="M7 17h.01"/><path d="M11 13h.01"/><path d="M11 17h.01"/></svg>
+                    </div>
+                    <span class="font-bold tracking-tighter text-slate-800 uppercase">Furrywatch</span>
+                </div>
+                <span id="slide-counter" class="text-xs font-mono text-slate-400">SLIDE 1 / 12</span>
+            </div>
+
+            <div id="slide-content-area" class="flex-1 flex flex-col justify-center items-center text-center space-y-8 slide-transition">
+                <!-- Content injected by JS -->
+            </div>
+
+            <div class="mt-8 flex justify-between items-center">
+                <div class="flex gap-2">
+                    <button onclick="prevSlide()" class="p-2 hover:bg-slate-100 rounded-full transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400"><path d="m15 18-6-6 6-6"/></svg>
+                    </button>
+                    <button onclick="nextSlide()" class="p-2 hover:bg-slate-100 rounded-full transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400"><path d="m9 18 6-6-6-6"/></svg>
+                    </button>
+                </div>
+                <div id="dot-indicators" class="flex gap-1">
+                    <!-- Dots injected by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Presenter Sidebar -->
+        <div class="flex-1 bg-slate-900 text-white p-8 flex flex-col border-l border-slate-800">
+            <div class="mb-8">
+                <h3 class="text-[10px] font-bold text-blue-400 uppercase tracking-widest mb-4">Presentation Script</h3>
+                <p id="presenter-script" class="text-lg leading-relaxed text-slate-200 italic font-serif">
+                    <!-- Script injected by JS -->
+                </p>
+            </div>
+            
+            <div class="mt-auto pt-6 border-t border-slate-800">
+                <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4">Investor Resources</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 text-xs text-slate-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-600"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                        <span>APPA Market Data 2025</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-xs text-slate-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-600"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                        <span>Pew Research Mobile Trends</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-xs text-slate-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-600"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                        <span>Gallup Workplace Insights</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-6 text-slate-400 text-xs text-center">
+        Furrywatch Pitch Deck • Confidential & Proprietary
+    </div>
+
+    <script>
+        const slides = [
+            {
+                title: "Aura: Complete AI Ecosystem for pet monitoring",
+                icon: `
+                <div class="relative w-72 h-72 flex items-center justify-center">
+                    <!-- Orbiting Ring -->
+                    <div class="absolute inset-0 border-2 border-dashed border-blue-200 rounded-full animate-spin-slow">
+                        <!-- 8 items evenly spaced at 45° intervals -->
+                        <!-- 0°: Feeding -->
+                        <div class="absolute top-[0%] left-[50%]" style="transform:translate(-50%,-50%)">
+                            <div class="p-2 bg-white shadow-lg rounded-xl border border-blue-50 animate-reverse-spin">
+                                <span class="text-xl">🥣</span>
+                            </div>
+                        </div>
+                        <!-- 45°: Camera -->
+                        <div class="absolute top-[15%] left-[85%]" style="transform:translate(-50%,-50%)">
+                            <div class="p-2 bg-white shadow-lg rounded-xl border border-blue-50 animate-reverse-spin">
+                                <span class="text-xl">📷</span>
+                            </div>
+                        </div>
+                        <!-- 90°: Crate/Home -->
+                        <div class="absolute top-[50%] left-[100%]" style="transform:translate(-50%,-50%)">
+                            <div class="p-2 bg-white shadow-lg rounded-xl border border-blue-50 animate-reverse-spin">
+                                <span class="text-xl">🏠</span>
+                            </div>
+                        </div>
+                        <!-- 135°: Tracking/GPS -->
+                        <div class="absolute top-[85%] left-[85%]" style="transform:translate(-50%,-50%)">
+                            <div class="p-2 bg-white shadow-lg rounded-xl border border-blue-50 animate-reverse-spin">
+                                <span class="text-xl">📍</span>
+                            </div>
+                        </div>
+                        <!-- 180°: Bone/Treats -->
+                        <div class="absolute top-[100%] left-[50%]" style="transform:translate(-50%,-50%)">
+                            <div class="p-2 bg-white shadow-lg rounded-xl border border-blue-50 animate-reverse-spin">
+                                <span class="text-xl">🦴</span>
+                            </div>
+                        </div>
+                        <!-- 225°: Water -->
+                        <div class="absolute top-[85%] left-[15%]" style="transform:translate(-50%,-50%)">
+                            <div class="p-2 bg-white shadow-lg rounded-xl border border-blue-50 animate-reverse-spin">
+                                <span class="text-xl">💧</span>
+                            </div>
+                        </div>
+                        <!-- 270°: Kibble/Treat -->
+                        <div class="absolute top-[50%] left-[0%]" style="transform:translate(-50%,-50%)">
+                            <div class="p-2 bg-white shadow-lg rounded-xl border border-blue-50 animate-reverse-spin">
+                                <span class="text-xl">🍖</span>
+                            </div>
+                        </div>
+                        <!-- 315°: Vital Monitoring (Heart Pulse) -->
+                        <div class="absolute top-[15%] left-[15%]" style="transform:translate(-50%,-50%)">
+                            <div class="p-2 bg-white shadow-lg rounded-xl border border-blue-50 animate-reverse-spin">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 12.572l-7.5 7.428l-7.5-7.428A5 5 0 1 1 12 6.006a5 5 0 1 1 7.5 6.572"/><path d="M5 12h3l2-3 3 6 2-3h4" stroke="#ef4444" stroke-width="2"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Central iPhone Mockup (smaller) -->
+                    <div class="relative w-[5.5rem] h-[11rem] bg-black rounded-[1.6rem] border-[3px] border-gray-800 shadow-2xl flex flex-col overflow-hidden z-10">
+                        <!-- Dynamic Island -->
+                        <div class="w-[1.8rem] h-[0.5rem] bg-black absolute top-[0.35rem] left-1/2 -translate-x-1/2 rounded-full z-20"></div>
+                        <!-- Side Button (right) -->
+                        <div class="absolute -right-[4px] top-[3.5rem] w-[3px] h-5 bg-gray-700 rounded-r-sm"></div>
+                        <!-- Volume Buttons (left) -->
+                        <div class="absolute -left-[4px] top-[2.8rem] w-[3px] h-3 bg-gray-700 rounded-l-sm"></div>
+                        <div class="absolute -left-[4px] top-[4rem] w-[3px] h-3 bg-gray-700 rounded-l-sm"></div>
+                        <!-- Screen -->
+                        <div class="flex-1 bg-gradient-to-b from-blue-500 to-indigo-600 m-[2px] rounded-[1.4rem] p-1.5 pt-5 flex flex-col gap-1 overflow-hidden">
+                            <div class="h-1.5 w-8 bg-white/20 rounded-full"></div>
+                            <div class="flex-1 bg-white/10 rounded-lg flex items-center justify-center">
+                                <svg class="w-8 h-8 text-white/40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.7 1h5.9a2 2 0 0 1 2 2v4.5"/><path d="M16 22a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2z"/></svg>
+                            </div>
+                            <div class="h-6 w-full bg-white/20 rounded-lg"></div>
+                            <!-- Home Indicator -->
+                            <div class="w-8 h-[3px] bg-white/50 rounded-full mx-auto mb-0.5"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Glow effect -->
+                    <div class="absolute w-40 h-40 bg-blue-400 blur-[80px] opacity-20 -z-10"></div>
+                </div>`,
+                content: `
+                    <div class="relative w-full py-4 rounded-xl flex items-center justify-center overflow-hidden">
+                        <div class="relative flex flex-col items-center">
+                            <div class="flex gap-2">
+                                <div class="px-3 py-1 bg-blue-50 rounded-full text-[10px] font-bold text-blue-600 uppercase tracking-widest border border-blue-100">AI Camera. Smart E-Collar. Intelligent Crate. Connected via one app to monitor health, safety, and behavior. Complete pet care, simplified.</div>
+                
+                            </div>
+                        </div>
+                    </div>`,
+                script: "“Furrywatch is the central nervous system for pet care, orbiting a simple, intelligent mobile interface.”"
+            },
+            {
+                title: "A Market Ready to Evolve",
+                icon: `<svg class="w-12 h-12 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 17 6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg>`,
+                content: `
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-green-50 p-6 rounded-xl border border-green-100">
+                            <div class="text-4xl font-black text-green-600">66%</div>
+                            <div class="text-sm text-slate-600 font-medium">Of North American households own pets</div>
+                        </div>
+                        <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
+                            <div class="text-4xl font-black text-blue-600">$150B+</div>
+                            <div class="text-sm text-slate-600 font-medium">Annual spending on pet industry</div>
+                        </div>
+                        <div class="col-span-2 text-xs text-slate-400 italic">Source: APPA 2025 State of the Industry Report</div>
+                    </div>`,
+                script: "“66% of North American households own pets, driving over $150B in annual spending.”"
+            },
+            {
+                title: "Digital + Hybrid Life Is the New Normal",
+                icon: "Sad dog image",
+                content: `
+                    <div class="flex gap-4 items-center justify-center">
+                        <div class="flex-1 bg-slate-50 p-4 rounded-lg text-center border">
+                            <div class="text-2xl font-bold">90%+</div>
+                            <div class="text-xs uppercase tracking-wider text-slate-500">Smartphone Use</div>
+                        </div>
+                        <div class="text-slate-300">+</div>
+                        <div class="flex-1 bg-slate-50 p-4 rounded-lg text-center border">
+                            <div class="text-2xl font-bold">46%</div>
+                            <div class="text-xs uppercase tracking-wider text-slate-500">Time in Office</div>
+                        </div>
+                        <div class="flex-1 bg-slate-50 p-4 rounded-lg text-center border">
+                            <div class="text-2xl font-bold">53%</div>
+                            <div class="text-xs uppercase tracking-wider text-slate-500">Dogs home alone for 5-8 hrs/day</div>
+                        </div>
+                    </div>`,
+                script: "“Over 90% of adults use smartphones daily, while hybrid work keeps pets home alone for large parts of the day.”"
+            },
+            {
+                title: `Pet care solutions are fragmented, reactive, and lack intelligence. <span class="block text-red-500 font-bold mt-2">Care Has Not Caught Up</span>`,
+                icon: `<svg class="w-12 h-12 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a4 4 0 0 0 0 8"/><path d="M14 11a4 4 0 0 0 0-8"/><path d="M9 15 15 9"/></svg>`,
+                content: `
+                    <div class="flex justify-around items-center h-48">
+                        <div class="flex flex-col items-center opacity-50">
+                            <div class="p-4 bg-slate-100 rounded-full mb-2 text-xl">📷</div>
+                            <span class="text-xs">Camera</span>
+                        </div>
+                        <div class="h-px w-8 bg-red-200 border-dashed border-t-2"></div>
+                        <div class="flex flex-col items-center opacity-50">
+                            <div class="p-4 bg-slate-100 rounded-full mb-2 text-xl">🥣</div>
+                            <span class="text-xs">Feeder</span>
+                        </div>
+                        <div class="h-px w-8 bg-red-200 border-dashed border-t-2"></div>
+                        <div class="flex flex-col items-center opacity-50">
+                            <div class="p-4 bg-slate-100 rounded-full mb-2 text-xl">📱</div>
+                            <span class="text-xs">Basic App</span>
+                        </div>
+                    </div>`,
+                script: "“Pet care solutions are fragmented, reactive, and lack intelligence.”"
+            },
+            {
+                title: "The Pain Point: Emotional + Financial Cost",
+                icon: `<svg class="w-12 h-12 text-red-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>`,
+                content: `
+                    <div class="space-y-4">
+                        <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
+                            <p class="text-lg font-bold text-red-700 text-left">70% of Owners</p>
+                            <p class="text-sm text-red-600 text-left">Feel anxiety/guilt leaving pets alone.</p>
+                        </div>
+                        <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
+                            <p class="text-lg font-bold text-red-700 text-left">1 in 3 pets</p>
+                            <p class="text-sm text-red-600 text-left">Require emergency veterinary care annually </p>
+                        </div>
+                    </div>`,
+                script: "“70%+ of owners feel anxiety leaving pets alone, with health issues often detected too late.”"
+            },
+            {
+                title: "Introducing Furrywatch",
+                icon: `<svg class="w-12 h-12 text-blue-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>`,
+                content: `
+                    <div class="bg-gradient-to-br from-blue-600 to-indigo-700 p-8 rounded-2xl text-white text-center">
+                        <div class="text-sm font-bold tracking-[0.2em] mb-2">AURA ECOSYSTEM</div>
+                        <div class="text-3xl font-black mb-4">Unified Intelligence</div>
+                        <div class="grid grid-cols-3 gap-2">
+                            <div class="bg-white/10 p-2 rounded text-[10px]">MONITOR</div>
+                            <div class="bg-white/10 p-2 rounded text-[10px]">ANALYZE</div>
+                            <div class="bg-white/10 p-2 rounded text-[10px]">REACT</div>
+                        </div>
+                    </div>`,
+                script: "“Furrywatch connects monitoring, insights, and action into one seamless system.”"
+            },
+            {                title: "Three Devices. One Mind.",
+                icon: `<div class="px-3 py-1 bg-slate-100 rounded-full text-xs font-bold text-slate-500 uppercase tracking-widest border border-slate-200">Hardware Features</div>`,
+                content: `
+                    <div class="grid grid-cols-3 gap-4 w-full">
+                        <!-- Camera -->
+                        <div class="bg-white rounded-xl p-4 border border-slate-100 shadow-sm text-left space-y-2">
+                            <div class="h-10 w-10 bg-teal-100 rounded-lg flex items-center justify-center">
+                                <svg class="w-5 h-5 text-teal-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg>
+                            </div>
+                            <div class="text-base font-bold text-slate-800">Sentinel Smart Camera</div>
+                            <p class="text-xs text-slate-500 leading-snug">AI-powered monitoring — distinguishes playing, sleeping & distress.</p>
+                            <ul class="space-y-1 text-xs text-slate-400">
+                                <li class="flex items-center gap-1"><span class="text-teal-500">✓</span> 1080p Night Vision</li>
+                                <li class="flex items-center gap-1"><span class="text-teal-500">✓</span> Two-way Audio</li>
+                                <li class="flex items-center gap-1"><span class="text-teal-500">✓</span> Treat Dispenser Compatible</li>
+                            </ul>
+                        </div>
+                        <!-- Collar -->
+                        <div class="bg-white rounded-xl p-4 border border-slate-100 shadow-sm text-left space-y-2">
+                            <div class="h-10 w-10 bg-orange-100 rounded-lg flex items-center justify-center">
+                                <svg class="w-5 h-5 text-orange-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="22" y1="12" x2="19" y2="12"/><line x1="5" y1="12" x2="2" y2="12"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+                            </div>
+                            <div class="text-base font-bold text-slate-800">Guardian GPS Collar</div>
+                            <p class="text-xs text-slate-500 leading-snug">Real-time location tracking combined with vital sign monitoring.</p>
+                            <ul class="space-y-1 text-xs text-slate-400">
+                                <li class="flex items-center gap-1"><span class="text-orange-500">✓</span> Global LTE Tracking</li>
+                                <li class="flex items-center gap-1"><span class="text-orange-500">✓</span> Activity & Sleep Analysis</li>
+                                <li class="flex items-center gap-1"><span class="text-orange-500">✓</span> Smart Training</li>
+                            </ul>
+                        </div>
+                        <!-- Crate -->
+                        <div class="bg-white rounded-xl p-4 border border-slate-100 shadow-sm text-left space-y-2">
+                            <div class="h-10 w-10 bg-indigo-100 rounded-lg flex items-center justify-center">
+                                <svg class="w-5 h-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                            </div>
+                            <div class="text-base font-bold text-slate-800">Sanctuary Smart Crate</div>
+                            <p class="text-xs text-slate-500 leading-snug">More than a cage — an automated care station for safety & comfort.</p>
+                            <ul class="space-y-1 text-xs text-slate-400">
+                                <li class="flex items-center gap-1"><span class="text-indigo-500">✓</span> Auto-locking Mechanism</li>
+                                <li class="flex items-center gap-1"><span class="text-indigo-500">✓</span> Treat & Food Dispenser</li>
+                                <li class="flex items-center gap-1"><span class="text-indigo-500">✓</span> Climate Sensor</li>
+                            </ul>
+                        </div>
+                    </div>`,
+                script: "“Three purpose-built devices — a smart camera, GPS collar, and intelligent crate — working together as one unified system."
+            },
+            {                title: "Powered by Aura Ecosystem",
+                icon: `<svg class="w-12 h-12 text-yellow-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>`,
+                content: `
+                    <div class="flex items-center space-x-2">
+                        <div class="flex-1 bg-white border p-3 rounded shadow-sm text-center">
+                            <div class="text-xs font-bold">DATA</div>
+                        </div>
+                        <span class="text-blue-400">→</span>
+                        <div class="flex-1 bg-blue-600 text-white p-3 rounded shadow-sm text-center">
+                            <div class="text-xs font-bold">AI ENGINE</div>
+                        </div>
+                        <span class="text-blue-400">→</span>
+                        <div class="flex-1 bg-white border p-3 rounded shadow-sm text-center">
+                            <div class="text-xs font-bold">ALERTS</div>
+                        </div>
+                    </div>`,
+                script: "“Our platform combines real-time data with AI-driven insights to enable preventive care.”"
+            },
+            {
+                title: "A Rapidly Expanding Category",
+                icon: `<svg class="w-12 h-12 text-blue-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 17 6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg>`,
+                content: `
+                    <div class="relative h-48 w-full border-b-2 border-l-2 border-slate-200">
+                        <svg class="absolute bottom-0 left-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <path d="M0,90 Q30,85 50,60 T100,10" fill="none" stroke="#3b82f6" stroke-width="4" />
+                        </svg>
+                        <div class="absolute top-4 right-4 text-right">
+                            <div class="text-3xl font-bold">$20B+</div>
+                            <div class="text-xs text-slate-500 font-bold uppercase tracking-widest">Market Potential 2030</div>
+                        </div>
+                    </div>`,
+                script: "“The pet tech market is projected to exceed $20B, with strong recurring revenue potential.”"
+            },
+            {
+                title: "Scalable & Recurring Revenue",
+                icon: `<svg class="w-12 h-12 text-indigo-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.1 6.32a2 2 0 0 0 0 3.68l9.07 4.14a2 2 0 0 0 1.66 0l9.07-4.14a2 2 0 0 0 0-3.68z"/><path d="m2 12 9.07 4.14a2 2 0 0 0 1.66 0L22 12"/><path d="m2 16 9.07 4.14a2 2 0 0 0 1.66 0L22 16"/></svg>`,
+                content: `
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center p-4 bg-slate-50 rounded-lg border">
+                            <span class="font-bold">Hardware Sale</span>
+                            <span class="text-slate-500">Upfront Revenue</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-indigo-600 text-white rounded-lg shadow-lg">
+                            <span class="font-bold">Subscription</span>
+                            <span class="text-indigo-200">Recurring Insights</span>
+                        </div>
+                    </div>`,
+                script: "“Furrywatch combines hardware sales with subscription-based insights and services.”"
+            },
+            {
+                title: "Perfect Timing",
+                icon: `<svg class="w-12 h-12 text-slate-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+                content: `
+                    <div class="grid grid-cols-3 gap-4 w-full">
+                        <div class="bg-white p-5 rounded-xl border border-slate-100 shadow-sm text-center space-y-3">
+                            <div class="h-14 w-14 bg-amber-100 rounded-xl flex items-center justify-center mx-auto">
+                                <svg class="w-7 h-7 text-amber-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/></svg>
+                            </div>
+                            <div class="text-sm font-bold text-slate-800">Pet Adoption ↑</div>
+                            <div class="text-xs text-slate-500">Record ownership levels across North America</div>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl border border-slate-100 shadow-sm text-center space-y-3">
+                            <div class="h-14 w-14 bg-blue-100 rounded-xl flex items-center justify-center mx-auto">
+                                <svg class="w-7 h-7 text-blue-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+                            </div>
+                            <div class="text-sm font-bold text-slate-800">Tech Maturity ↑</div>
+                            <div class="text-xs text-slate-500">AI, IoT & mobile now affordable at scale</div>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl border border-slate-100 shadow-sm text-center space-y-3">
+                            <div class="h-14 w-14 bg-indigo-100 rounded-xl flex items-center justify-center mx-auto">
+                                <svg class="w-7 h-7 text-indigo-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                            </div>
+                            <div class="text-sm font-bold text-slate-800">Hybrid Work ↑</div>
+                            <div class="text-xs text-slate-500">Pets home alone more — owners want visibility</div>
+                        </div>
+                    </div>`,
+                script: "“The convergence of pet ownership, smart tech, and hybrid work creates a unique inflection point.”"
+            },
+            {
+                title: "Beyond Monitoring",
+                icon: `<svg class="w-12 h-12 text-green-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>`,
+                content: `
+                    <div class="grid grid-cols-2 gap-4 w-full">
+                        <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm flex items-start gap-3">
+                            <div class="h-10 w-10 bg-green-100 rounded-lg flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5 text-green-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                            </div>
+                            <div class="text-left">
+                                <div class="text-sm font-bold text-slate-800">Privacy First</div>
+                                <div class="text-xs text-slate-500">Secure, encrypted data handling</div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm flex items-start gap-3">
+                            <div class="h-10 w-10 bg-blue-100 rounded-lg flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5 text-blue-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M9 14h6"/><path d="M9 18h6"/><path d="M9 10h1"/></svg>
+                            </div>
+                            <div class="text-left">
+                                <div class="text-sm font-bold text-slate-800">Vet Integration</div>
+                                <div class="text-xs text-slate-500">Seamless data sharing with vets</div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm flex items-start gap-3">
+                            <div class="h-10 w-10 bg-indigo-100 rounded-lg flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+                            </div>
+                            <div class="text-left">
+                                <div class="text-sm font-bold text-slate-800">Auto Health Logs</div>
+                                <div class="text-xs text-slate-500">AI-generated health reports</div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm flex items-start gap-3">
+                            <div class="h-10 w-10 bg-red-100 rounded-lg flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5 text-red-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                            </div>
+                            <div class="text-left">
+                                <div class="text-sm font-bold text-slate-800">Predictive Diagnostics</div>
+                                <div class="text-xs text-slate-500">Early illness detection via AI</div>
+                            </div>
+                        </div>
+                    </div>`,
+                script: "“We are building the operating system for modern pet parenting.”"
+            },
+            {
+                title: "Meet the Founders",
+                icon: `<svg class="w-12 h-12 text-indigo-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+                content: `
+                    <div class="grid grid-cols-2 gap-6 w-full">
+                        <div class="flex flex-col items-center text-center space-y-2">
+                            <div class="w-20 h-20 rounded-full bg-slate-200 border-2 border-indigo-200 flex items-center justify-center overflow-hidden">
+                                <svg class="w-10 h-10 text-slate-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            </div>
+                            <div>
+                                <div class="text-sm font-bold text-slate-800">Founder 1</div>
+                                <div class="text-[10px] text-indigo-500 font-semibold uppercase tracking-wider">CEO / Co-Founder</div>
+                                <div class="text-[10px] text-slate-500 mt-1 leading-tight">Brief bio or expertise area</div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center text-center space-y-2">
+                            <div class="w-20 h-20 rounded-full bg-slate-200 border-2 border-indigo-200 flex items-center justify-center overflow-hidden">
+                                <svg class="w-10 h-10 text-slate-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            </div>
+                            <div>
+                                <div class="text-sm font-bold text-slate-800">Founder 2</div>
+                                <div class="text-[10px] text-indigo-500 font-semibold uppercase tracking-wider">CTO / Co-Founder</div>
+                                <div class="text-[10px] text-slate-500 mt-1 leading-tight">Brief bio or expertise area</div>
+                            </div>
+                        </div>
+                    </div>`,
+                script: "“Our founding team brings together expertise in AI, hardware engineering, and pet care to build the future of pet technology.”"
+            },
+            {
+                title: "From Presence to Connection",
+                icon: `<svg class="w-12 h-12 text-blue-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>`,
+                content: `
+                    <div class="text-center py-10">
+                        <div class="text-5xl mb-4">🏠 ❤️ 📱</div>
+                        <div class="text-2xl font-bold text-slate-800">Transforming Pet Care</div>
+                    </div>`,
+                script: "“Furrywatch transforms pet care from reactive to intelligent, from distant to connected.”"
+            }
+        ];
+
+        let currentIndex = 0;
+
+        function renderSlide() {
+            const slide = slides[currentIndex];
+            const contentArea = document.getElementById('slide-content-area');
+            const counter = document.getElementById('slide-counter');
+            const scriptArea = document.getElementById('presenter-script');
+            const dotIndicators = document.getElementById('dot-indicators');
+
+            // Update Text & Main Content
+            counter.innerText = `SLIDE ${currentIndex + 1} / ${slides.length}`;
+            scriptArea.innerText = slide.script;
+
+            contentArea.innerHTML = `
+                <div class="transition-transform duration-500">
+                    ${slide.icon}
+                </div>
+                <h1 class="text-3xl md:text-4xl font-black text-slate-900 leading-tight max-w-2xl">
+                    ${slide.title}
+                </h1>
+                <div class="w-full max-w-md">
+                    ${slide.content}
+                </div>
+            `;
+
+            // Update Dots
+            dotIndicators.innerHTML = slides.map((_, i) => `
+                <div class="h-1 rounded-full transition-all ${i === currentIndex ? 'w-4 bg-blue-600' : 'w-1 bg-slate-200'}"></div>
+            `).join('');
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            renderSlide();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            renderSlide();
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+
+        // Initial render
+        renderSlide();
+    </script>
+</body>
+</html>
