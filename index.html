@@ -535,37 +535,36 @@
                                     </div>
                                     <div class="text-[8px] text-green-600 bg-green-50 px-1.5 py-0.5 rounded">Normal</div>
                                 </div>
-                                <div class="rounded-lg shadow-lg overflow-hidden h-28 relative">
-                                    <div class="absolute inset-0 flex items-center justify-center bg-center bg-cover bg-no-repeat" style="background-image: url('crate-dog.jpg');">
-                                        <i data-lucide="play-circle" class="h-8 w-8 text-white opacity-80"></i>
+                                <div class="rounded-lg shadow-lg overflow-hidden h-36 relative">
+                                    <img src="https://basemaps.cartocdn.com/rastertiles/voyager/15/9157/11920@2x.png" class="absolute inset-0 w-full h-full object-cover" alt="Map" />
+                                    <div class="absolute inset-0 bg-white/10"></div>
+                                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                                        <div class="bg-red-500 rounded-full p-1.5 shadow-lg">
+                                            <svg class="h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                                        </div>
+                                        <div class="bg-white rounded-full px-2 py-0.5 mt-1 shadow text-[7px] font-bold text-slate-700 flex items-center gap-1">
+                                            <svg class="h-2.5 w-2.5 text-amber-500" viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/></svg>
+                                            Buddy
+                                        </div>
                                     </div>
-                                    <div class="absolute bottom-1.5 left-2 text-white text-[8px] font-bold">Crate Cam</div>
-                                    <div class="absolute bottom-1.5 right-2 flex items-center space-x-1 text-white text-[7px] opacity-80">
-                                        <span class="bg-white/20 rounded px-1">\u2212</span>
-                                        <i data-lucide="search" class="h-3 w-3"></i>
-                                        <span class="bg-white/20 rounded px-1">+</span>
-                                    </div>
+                                    <div class="absolute top-1.5 left-2 text-[8px] font-bold text-white" style="text-shadow: 0 1px 3px rgba(0,0,0,0.5);">Live Location</div>
                                     <div class="absolute top-1.5 right-2 flex items-center space-x-1">
-                                        <div class="h-1.5 w-1.5 bg-red-500 rounded-full animate-pulse"></div>
-                                        <span class="text-[8px] text-white">LIVE</span>
+                                        <div class="h-1.5 w-1.5 bg-green-500 rounded-full animate-pulse"></div>
+                                        <span class="text-[8px] text-white" style="text-shadow: 0 1px 3px rgba(0,0,0,0.5);">GPS</span>
                                     </div>
                                 </div>
-                                <div class="grid grid-cols-2 gap-1.5">
+                                <div class="grid grid-cols-3 gap-1.5">
                                     <div class="bg-white p-1.5 rounded-lg shadow border border-slate-100 text-center">
-                                        <i data-lucide="lock" class="h-3.5 w-3.5 mx-auto text-indigo-500 mb-0.5"></i>
-                                        <div class="text-[7px] font-bold text-slate-700">Lock Crate</div>
+                                        <i data-lucide="vibrate" class="h-3.5 w-3.5 mx-auto text-orange-500 mb-0.5"></i>
+                                        <div class="text-[7px] font-bold text-slate-700">Vibrate</div>
+                                    </div>
+                                    <div class="bg-red-500 p-1.5 rounded-lg shadow border border-red-600 text-center">
+                                        <i data-lucide="zap" class="h-3.5 w-3.5 mx-auto text-yellow-300 mb-0.5"></i>
+                                        <div class="text-[7px] font-bold text-white">Zap</div>
                                     </div>
                                     <div class="bg-white p-1.5 rounded-lg shadow border border-slate-100 text-center">
-                                        <i data-lucide="fan" class="h-3.5 w-3.5 mx-auto text-pink-500 mb-0.5"></i>
-                                        <div class="text-[7px] font-bold text-slate-700">Ventilation</div>
-                                    </div>
-                                    <div class="bg-white p-1.5 rounded-lg shadow border border-slate-100 text-center">
-                                        <i data-lucide="utensils" class="h-3.5 w-3.5 mx-auto text-pink-500 mb-0.5"></i>
-                                        <div class="text-[7px] font-bold text-slate-700">Food</div>
-                                    </div>
-                                    <div class="bg-white p-1.5 rounded-lg shadow border border-slate-100 text-center">
-                                        <i data-lucide="droplet" class="h-3.5 w-3.5 mx-auto text-pink-500 mb-0.5"></i>
-                                        <div class="text-[7px] font-bold text-slate-700">Water</div>
+                                        <i data-lucide="radar" class="h-3.5 w-3.5 mx-auto text-blue-500 mb-0.5"></i>
+                                        <div class="text-[7px] font-bold text-slate-700">Find Buddy</div>
                                     </div>
                                 </div>
                             </div>
@@ -631,36 +630,37 @@
                                     </div>
                                     <div class="text-[8px] text-green-600 bg-green-50 px-1.5 py-0.5 rounded">Normal</div>
                                 </div>
-                                <div class="rounded-lg shadow-lg overflow-hidden h-36 relative">
-                                    <img src="https://basemaps.cartocdn.com/rastertiles/voyager/15/9157/11920@2x.png" class="absolute inset-0 w-full h-full object-cover" alt="Map" />
-                                    <div class="absolute inset-0 bg-white/10"></div>
-                                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                                        <div class="bg-red-500 rounded-full p-1.5 shadow-lg">
-                                            <svg class="h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                                        </div>
-                                        <div class="bg-white rounded-full px-2 py-0.5 mt-1 shadow text-[7px] font-bold text-slate-700 flex items-center gap-1">
-                                            <svg class="h-2.5 w-2.5 text-amber-500" viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/></svg>
-                                            Buddy
-                                        </div>
+                                <div class="rounded-lg shadow-lg overflow-hidden h-28 relative">
+                                    <div class="absolute inset-0 flex items-center justify-center bg-center bg-cover bg-no-repeat" style="background-image: url('crate-dog.jpg');">
+                                        <i data-lucide="play-circle" class="h-8 w-8 text-white opacity-80"></i>
                                     </div>
-                                    <div class="absolute top-1.5 left-2 text-[8px] font-bold text-white" style="text-shadow: 0 1px 3px rgba(0,0,0,0.5);">Live Location</div>
+                                    <div class="absolute bottom-1.5 left-2 text-white text-[8px] font-bold">Crate Cam</div>
+                                    <div class="absolute bottom-1.5 right-2 flex items-center space-x-1 text-white text-[7px] opacity-80">
+                                        <span class="bg-white/20 rounded px-1">\u2212</span>
+                                        <i data-lucide="search" class="h-3 w-3"></i>
+                                        <span class="bg-white/20 rounded px-1">+</span>
+                                    </div>
                                     <div class="absolute top-1.5 right-2 flex items-center space-x-1">
-                                        <div class="h-1.5 w-1.5 bg-green-500 rounded-full animate-pulse"></div>
-                                        <span class="text-[8px] text-white" style="text-shadow: 0 1px 3px rgba(0,0,0,0.5);">GPS</span>
+                                        <div class="h-1.5 w-1.5 bg-red-500 rounded-full animate-pulse"></div>
+                                        <span class="text-[8px] text-white">LIVE</span>
                                     </div>
                                 </div>
-                                <div class="grid grid-cols-3 gap-1.5">
+                                <div class="grid grid-cols-2 gap-1.5">
                                     <div class="bg-white p-1.5 rounded-lg shadow border border-slate-100 text-center">
-                                        <i data-lucide="vibrate" class="h-3.5 w-3.5 mx-auto text-orange-500 mb-0.5"></i>
-                                        <div class="text-[7px] font-bold text-slate-700">Vibrate</div>
-                                    </div>
-                                    <div class="bg-red-500 p-1.5 rounded-lg shadow border border-red-600 text-center">
-                                        <i data-lucide="zap" class="h-3.5 w-3.5 mx-auto text-yellow-300 mb-0.5"></i>
-                                        <div class="text-[7px] font-bold text-white">Zap</div>
+                                        <i data-lucide="lock" class="h-3.5 w-3.5 mx-auto text-indigo-500 mb-0.5"></i>
+                                        <div class="text-[7px] font-bold text-slate-700">Lock Crate</div>
                                     </div>
                                     <div class="bg-white p-1.5 rounded-lg shadow border border-slate-100 text-center">
-                                        <i data-lucide="radar" class="h-3.5 w-3.5 mx-auto text-blue-500 mb-0.5"></i>
-                                        <div class="text-[7px] font-bold text-slate-700">Find Buddy</div>
+                                        <i data-lucide="fan" class="h-3.5 w-3.5 mx-auto text-pink-500 mb-0.5"></i>
+                                        <div class="text-[7px] font-bold text-slate-700">Ventilation</div>
+                                    </div>
+                                    <div class="bg-white p-1.5 rounded-lg shadow border border-slate-100 text-center">
+                                        <i data-lucide="utensils" class="h-3.5 w-3.5 mx-auto text-pink-500 mb-0.5"></i>
+                                        <div class="text-[7px] font-bold text-slate-700">Food</div>
+                                    </div>
+                                    <div class="bg-white p-1.5 rounded-lg shadow border border-slate-100 text-center">
+                                        <i data-lucide="droplet" class="h-3.5 w-3.5 mx-auto text-pink-500 mb-0.5"></i>
+                                        <div class="text-[7px] font-bold text-slate-700">Water</div>
                                     </div>
                                 </div>
                             </div>
