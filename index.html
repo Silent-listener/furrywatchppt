@@ -121,13 +121,13 @@
                         <!-- 0°: Dog Bowl -->
                         <div class="absolute top-[0%] left-[50%]" style="transform:translate(-50%,-50%)">
                             <div class="p-2 bg-white shadow-lg rounded-xl border border-blue-50 animate-reverse-spin">
-                                <svg class="w-6 h-5" viewBox="0 0 26 16" fill="none" stroke="#71717a" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h18l1.5 8H2.5L4 4z" fill="#a1a1aa"/><ellipse cx="13" cy="4" rx="9" ry="2.5" fill="#d4d4d8" stroke="#71717a"/><ellipse cx="13" cy="4" rx="7.5" ry="1.8" fill="#8B4513"/><circle cx="9.5" cy="3.8" r="1" fill="#A0522D"/><circle cx="13" cy="3.5" r="1" fill="#6B3410"/><circle cx="16.5" cy="3.8" r="1" fill="#A0522D"/><circle cx="11" cy="4.5" r="0.9" fill="#6B3410"/><circle cx="15" cy="4.5" r="0.9" fill="#8B4513"/><circle cx="7.5" cy="4.2" r="0.8" fill="#6B3410"/><circle cx="18.5" cy="4.2" r="0.8" fill="#6B3410"/></svg>
+                                <img src="dog-dish-svgrepo-com.svg" alt="Dog bowl" class="w-6 h-5 object-contain" />
                             </div>
                         </div>
                         <!-- 45°: Camera -->
                         <div class="absolute top-[15%] left-[85%]" style="transform:translate(-50%,-50%)">
                             <div class="p-2 bg-white shadow-lg rounded-xl border border-blue-50 animate-reverse-spin">
-                                <span class="text-xl">📷</span>
+                                <img src="webcam-3-svgrepo-com.svg" alt="Camera" class="w-12 h-6 object-contain" />
                             </div>
                         </div>
                         <!-- 90°: Crate/Home -->
@@ -263,30 +263,34 @@
                 content: `
                     <div class="flex justify-around items-center h-48">
                         <div class="flex flex-col items-center opacity-50">
-                            <div class="p-4 bg-slate-100 rounded-full mb-2 text-xl">📷</div>
+                            <div class="w-20 h-20 bg-slate-100 rounded-full mb-2 flex items-center justify-center">
+                                <img src="webcam-svgrepo-com.svg" alt="Camera" class="w-10 h-10 object-contain" />
+                            </div>
                             <span class="text-xs">Camera</span>
                         </div>
-                        <div class="h-6 w-6 rounded-full border border-red-300 bg-red-50 flex items-center justify-center">
-                            <svg class="w-3.5 h-3.5 text-red-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                        <div class="w-10 h-6 flex items-center justify-center">
+                            <img src="broken-link-svgrepo-com.svg" alt="Broken link" class="w-16 h-8 object-contain" />
                         </div>
                         <div class="flex flex-col items-center opacity-50">
-                            <div class="p-4 bg-slate-100 rounded-full mb-2 text-xl">🥣</div>
-                            <span class="text-xs">Feeder</span>
+                            <div class="w-20 h-20 bg-slate-100 rounded-full mb-2 flex items-center justify-center">
+                                <img src="dog-house-svgrepo-com.svg" alt="Home" class="w-10 h-10 object-contain" />
+                            </div>
+                            <span class="text-xs">Home</span>
                         </div>
-                        <div class="h-6 w-6 rounded-full border border-red-300 bg-red-50 flex items-center justify-center">
-                            <svg class="w-3.5 h-3.5 text-red-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                        <div class="w-10 h-6 flex items-center justify-center">
+                            <img src="broken-link-svgrepo-com.svg" alt="Broken link" class="w-16 h-8 object-contain" />
                         </div>
                         <div class="flex flex-col items-center opacity-50">
-                            <div class="p-4 bg-slate-100 rounded-full mb-2 text-xl">📱</div>
+                            <div class="w-20 h-20 bg-slate-100 rounded-full mb-2 flex items-center justify-center text-3xl">📱</div>
                             <span class="text-xs">Basic App</span>
                         </div>
                     </div>`,
                 script: `
                     <div class="space-y-6 font-sans not-italic">
-                        <p>“I just want to know he’s okay without constantly checking.”</p>
+                        <p>“I am tired of all these different pet apps that don't talk to each other.”</p>
                         <p>“Only tell me if something is actually wrong. Otherwise, let me focus.”</p>
-                        <p>“I don’t fully trust pet sitters without checking in.”</p>
-                        <p>“Help me predict and prevent bad behavior before I leave.”</p>
+                        <p>“I just want to know he’s okay without constantly checking.”</p>
+                        <p>“If anything goes wrong, I need to know instantly and have a backup plan triggered.”</p>
                         <p>“I rush home because I feel guilty.”</p>
                     </div>`
             },
