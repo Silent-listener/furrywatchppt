@@ -3,676 +3,663 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Furrywatch Pitch Deck</title>
+    <title>Furry Watch - The Ultimate Pet Care Ecosystem</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Source+Serif+4:ital,wght@1,400&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
+        body { font-family: 'Inter', sans-serif; }
+        .clip-path-slant {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         }
-        
-        .font-serif {
-            font-family: 'Source Serif 4', serif;
+        .animate-pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
-
-        .animate-spin-slow {
-            animation: spin 20s linear infinite;
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .7; }
         }
-
-        .animate-reverse-spin {
-            animation: reverse-spin 20s linear infinite;
+        /* Apple-style smooth reveal */
+        .reveal-text {
+            background: linear-gradient(to right, #0f172a 20%, #64748b 40%, #0f172a 60%, #0f172a 80%);
+            background-size: 200% auto;
+            color: #000;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 5s linear infinite;
         }
-
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        @keyframes reverse-spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(-360deg); }
-        }
-
-        .pop-shadow {
-            box-shadow: 0 4px 20px rgba(0,0,0,0.12), 0 1px 4px rgba(0,0,0,0.06);
-        }
-
-        .slide-transition {
-            transition: all 0.5s ease-in-out;
-        }
-        
-        .hidden-slide {
-            display: none;
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
         }
     </style>
 </head>
-<body class="bg-slate-200 min-h-screen p-4 md:p-8 flex flex-col items-center">
+<body class="bg-slate-50 text-slate-800">
 
-    <div class="w-full max-w-5xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row aspect-video">
-        
-        <!-- Main Slide Area -->
-        <div class="flex-[2] p-8 flex flex-col justify-between relative overflow-hidden bg-white">
-            <div class="flex justify-between items-start mb-6">
-                <div class="flex items-center gap-2">
-                    <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.7 1h5.9a2 2 0 0 1 2 2v4.5"/><path d="M16 22a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2z"/><path d="M7 13v-3"/><path d="M7 17h.01"/><path d="M11 13h.01"/><path d="M11 17h.01"/></svg>
-                    </div>
-                    <span class="font-bold tracking-tighter text-slate-800 uppercase">Furrywatch</span>
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <i data-lucide="paw-print" class="h-8 w-8 text-teal-600 fill-current"></i>
                 </div>
-                <span id="slide-counter" class="text-xs font-mono text-slate-400">SLIDE 1 / 12</span>
-            </div>
-
-            <div id="slide-content-area" class="flex-1 flex flex-col justify-center items-center text-center space-y-8 slide-transition">
-                <!-- Content injected by JS -->
-            </div>
-
-        </div>
-
-        <!-- Presenter Sidebar -->
-        <div class="flex-1 bg-slate-900 text-white p-8 flex flex-col border-l border-slate-800">
-            <div class="mb-8 flex-1 flex flex-col">
-                <h3 class="text-[10px] font-bold text-blue-400 uppercase tracking-widest mb-4"></h3>
-                <div id="presenter-script" class="text-lg leading-relaxed text-slate-200 italic font-serif flex-1 flex items-center justify-center">
-                    <!-- Script injected by JS -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-slate-600 hover:text-teal-600 transition">Features</a>
+                    <a href="#app" class="text-slate-600 hover:text-teal-600 transition">The App</a>
+                    <!-- <a href="#rewards" class="text-slate-600 hover:text-teal-600 transition">Rewards</a> -->
+                    <a href="#faq" class="text-slate-600 hover:text-teal-600 transition">FAQ</a>
                 </div>
+                <button onclick="document.getElementById('rewards').scrollIntoView({behavior: 'smooth'})" class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2 rounded-full font-medium transition shadow-lg shadow-teal-600/20">
+                    Back this Project
+                </button>
             </div>
         </div>
-    </div>
+    </nav>
 
-    <div class="w-full max-w-5xl mt-4 flex justify-between items-center px-2">
-        <div class="flex gap-2">
-            <button onclick="prevSlide()" class="p-2 hover:bg-slate-300/50 rounded-full transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-500"><path d="m15 18-6-6 6-6"/></svg>
-            </button>
-            <button onclick="nextSlide()" class="p-2 hover:bg-slate-300/50 rounded-full transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-500"><path d="m9 18 6-6-6-6"/></svg>
-            </button>
+    <!-- Hero Section -->
+    <div class="relative bg-slate-900 text-white overflow-hidden pb-16 lg:pb-24">
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-gradient-to-br from-teal-900/40 to-slate-900/90 mix-blend-multiply"></div>
+            <!-- Abstract background shapes -->
+            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-teal-500/10 blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-indigo-500/10 blur-3xl"></div>
         </div>
-        <div id="dot-indicators" class="flex gap-1">
-            <!-- Dots injected by JS -->
-        </div>
-    </div>
 
-    <div class="mt-2 text-slate-400 text-xs text-center">
-        Furrywatch Pitch Deck • Confidential & Proprietary
-    </div>
-
-    <script>
-        const slides = [
-            {
-                title: `Aura Ecosystem:<br><span class="text-xl md:text-2xl font-bold">Intelligent Pet Monitoring, All in One Place</span>`,
-                icon: `
-                <div class="relative w-60 h-60 flex items-center justify-center">
-                    <!-- Orbiting Ring -->
-                    <div class="absolute inset-0 border-2 border-dashed border-blue-200 rounded-full animate-spin-slow">
-                        <!-- 8 items evenly spaced at 45° intervals -->
-                        <!-- 0°: Dog Bowl -->
-                        <div class="absolute top-[0%] left-[50%]" style="transform:translate(-50%,-50%)">
-                            <div class="p-2 bg-white shadow-lg rounded-xl border border-blue-50 animate-reverse-spin">
-                                <svg class="w-6 h-5" viewBox="0 0 26 16" fill="none" stroke="#71717a" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h18l1.5 8H2.5L4 4z" fill="#a1a1aa"/><ellipse cx="13" cy="4" rx="9" ry="2.5" fill="#d4d4d8" stroke="#71717a"/><ellipse cx="13" cy="4" rx="7.5" ry="1.8" fill="#8B4513"/><circle cx="9.5" cy="3.8" r="1" fill="#A0522D"/><circle cx="13" cy="3.5" r="1" fill="#6B3410"/><circle cx="16.5" cy="3.8" r="1" fill="#A0522D"/><circle cx="11" cy="4.5" r="0.9" fill="#6B3410"/><circle cx="15" cy="4.5" r="0.9" fill="#8B4513"/><circle cx="7.5" cy="4.2" r="0.8" fill="#6B3410"/><circle cx="18.5" cy="4.2" r="0.8" fill="#6B3410"/></svg>
-                            </div>
-                        </div>
-                        <!-- 45°: Camera -->
-                        <div class="absolute top-[15%] left-[85%]" style="transform:translate(-50%,-50%)">
-                            <div class="p-2 bg-white shadow-lg rounded-xl border border-blue-50 animate-reverse-spin">
-                                <span class="text-xl">📷</span>
-                            </div>
-                        </div>
-                        <!-- 90°: Crate/Home -->
-                        <div class="absolute top-[50%] left-[100%]" style="transform:translate(-50%,-50%)">
-                            <div class="p-2 bg-white shadow-lg rounded-xl border border-blue-50 animate-reverse-spin">
-                                <span class="text-xl">🏠</span>
-                            </div>
-                        </div>
-                        <!-- 135°: Tracking/GPS -->
-                        <div class="absolute top-[85%] left-[85%]" style="transform:translate(-50%,-50%)">
-                            <div class="p-2 bg-white shadow-lg rounded-xl border border-blue-50 animate-reverse-spin">
-                                <span class="text-xl">📍</span>
-                            </div>
-                        </div>
-                        <!-- 180°: Bone/Treats -->
-                        <div class="absolute top-[100%] left-[50%]" style="transform:translate(-50%,-50%)">
-                            <div class="p-2 bg-white shadow-lg rounded-xl border border-blue-50 animate-reverse-spin">
-                                <span class="text-xl">🦴</span>
-                            </div>
-                        </div>
-                        <!-- 225°: Water -->
-                        <div class="absolute top-[85%] left-[15%]" style="transform:translate(-50%,-50%)">
-                            <div class="p-2 bg-white shadow-lg rounded-xl border border-blue-50 animate-reverse-spin">
-                                <span class="text-xl">💧</span>
-                            </div>
-                        </div>
-                        <!-- 270°: Silicon Chip -->
-                        <div class="absolute top-[50%] left-[0%]" style="transform:translate(-50%,-50%)">
-                            <div class="p-2 bg-white shadow-lg rounded-xl border border-blue-50 animate-reverse-spin">
-                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="#021CA4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="1"/><path d="M6 10H2"/><path d="M6 14H2"/><path d="M10 6V2"/><path d="M14 6V2"/><path d="M18 10h4"/><path d="M18 14h4"/><path d="M10 18v4"/><path d="M14 18v4"/></svg>
-                            </div>
-                        </div>
-                        <!-- 315°: Vital Monitoring (Heart Pulse) -->
-                        <div class="absolute top-[15%] left-[15%]" style="transform:translate(-50%,-50%)">
-                            <div class="p-2 bg-white shadow-lg rounded-xl border border-blue-50 animate-reverse-spin">
-                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 12.572l-7.5 7.428l-7.5-7.428A5 5 0 1 1 12 6.006a5 5 0 1 1 7.5 6.572"/><path d="M5 12h3l2-3 3 6 2-3h4" stroke="#ef4444" stroke-width="2"/></svg>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Central iPhone Mockup -->
-                    <div class="relative w-[4.2rem] h-[8.5rem] bg-black rounded-[0.6rem] border-[2.5px] border-gray-800 shadow-2xl flex flex-col overflow-hidden z-10">
-                        <!-- Dynamic Island -->
-                        <div class="w-[1.4rem] h-[0.35rem] bg-black absolute top-[0.25rem] left-1/2 -translate-x-1/2 rounded-full z-20"></div>
-                        <!-- Side Button (right) -->
-                        <div class="absolute -right-[3px] top-[2.8rem] w-[2.5px] h-4 bg-gray-700 rounded-r-sm"></div>
-                        <!-- Volume Buttons (left) -->
-                        <div class="absolute -left-[3px] top-[2.2rem] w-[2.5px] h-2.5 bg-gray-700 rounded-l-sm"></div>
-                        <div class="absolute -left-[3px] top-[3.2rem] w-[2.5px] h-2.5 bg-gray-700 rounded-l-sm"></div>
-                        <!-- Screen -->
-                        <div class="flex-1 bg-gradient-to-b from-blue-500 to-indigo-600 m-[2px] rounded-[0.4rem] p-1 pt-4 flex flex-col gap-1 overflow-hidden">
-                            <div class="h-1 w-6 bg-white/20 rounded-full"></div>
-                            <div class="flex-1 bg-white/10 rounded flex items-center justify-center">
-                                <svg class="w-6 h-6 text-white/40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.7 1h5.9a2 2 0 0 1 2 2v4.5"/><path d="M16 22a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2z"/></svg>
-                            </div>
-                            <div class="h-5 w-full bg-white/20 rounded"></div>
-                            <!-- Home Indicator -->
-                            <div class="w-6 h-[2px] bg-white/50 rounded-full mx-auto mb-0.5"></div>
-                        </div>
-                    </div>
-                    
-                    <!-- Glow effect -->
-                    <div class="absolute w-32 h-32 bg-blue-400 blur-[80px] opacity-20 -z-10"></div>
-                </div>`,
-                content: `
-                    <div class="relative w-full py-4 rounded-xl flex items-center justify-center overflow-hidden">
-                        <div class="relative flex flex-col items-center">
-                            <div class="flex gap-2">
-                                <div class="px-3 py-1 bg-blue-50 rounded-full text-[10px] font-bold text-blue-600 uppercase tracking-widest border border-blue-100">.....</div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 lg:pt-24">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
                 
+                <!-- Hero Content -->
+                <div class="lg:col-span-7 space-y-8">
+                    <!-- <div class="inline-flex items-center px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-400 text-sm font-medium">
+                        <span class="animate-pulse mr-2 h-2 w-2 rounded-full bg-teal-400"></span>
+                        Coming soon on Kickstarter
+                    </div> -->
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                        AURA PetSphere™ <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">Smart Unified Ecosystem.</span>
+                    </h1>
+                    <p class="text-lg text-slate-300 max-w-2xl">
+                        AI Camera. Smart E-Collar. Intelligent Crate. Connected via one app to monitor health, safety, and behavior. Complete pet care, simplified.
+                    </p>
+
+                    <!-- Funding Stats -->
+                    <!-- <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+                        <div class="flex flex-col space-y-4">
+                            <div class="w-full bg-slate-700 rounded-full h-3">
+                                <div class="bg-gradient-to-r from-teal-400 to-emerald-400 h-3 rounded-full" style="width: 2%"></div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4 text-center divide-x divide-white/10">
+                                <div>
+                                    <div class="text-2xl font-bold text-white">$500,000</div>
+                                    <div class="text-xs text-slate-400 uppercase tracking-wider">Goal</div>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold text-white">389</div>
+                                    <div class="text-xs text-slate-400 uppercase tracking-wider">Days to go</div>
+                                </div>
                             </div>
                         </div>
-                    </div>`,
-                script: `<div class="not-italic flex items-center justify-center h-full">
-                    <img src="tech-savy-dog.png" alt="Golden Retriever" class="rounded-2xl shadow-lg w-full max-w-[16rem] object-cover border border-amber-100" />
-                </div>`
-            },
-            {
-                title: "A Market Ready to Evolve",
-                icon: `<svg class="w-12 h-12 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 17 6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg>`,
-                content: `
-                    <div class="grid grid-cols-3 gap-6 items-stretch">
-                        <div class="bg-teal-50 p-5 rounded-xl border border-teal-100 pop-shadow text-center flex flex-col">
-                            <div class="text-2xl font-black text-teal-600 mb-2">66%</div>
-                            <div class="text-xs text-slate-600 font-medium mt-auto">Of North American households own pets</div>
-                        </div>
-                        <div class="bg-orange-50 p-5 rounded-xl border border-orange-100 pop-shadow text-center flex flex-col">
-                            <div class="text-2xl font-black text-orange-500 mb-2">$150B+</div>
-                            <div class="text-xs text-slate-600 font-medium">Annual spending on pet industry</div>
-                        </div>
-                        <div class="bg-indigo-50 p-5 rounded-xl border border-indigo-100 pop-shadow text-center flex flex-col">
-                            <div class="text-2xl font-black text-indigo-600 mb-2">$20B+</div>
-                            <div class="text-xs text-slate-600 font-medium">Pet tech market potential 2030</div>
-                        </div>
-                        <div class="col-span-3 text-xs text-slate-400 italic text-center">Source: APPA 2025 State of the Industry Report</div>
-                    </div>`,
-                script: "“66% of North American households own pets, driving over $150B in annual spending.”"
-            },
-            {
-                title: "Digital + Hybrid Life Is the New Normal",
-                icon: `<img src="sad-dog.jpg" alt="Sad dog" class="w-40 h-24 object-cover rounded-xl shadow-md">`,
-                content: `
-                    <div class="grid grid-cols-3 gap-4 w-full">
-                        <div class="bg-white p-5 rounded-xl border border-slate-200/60 pop-shadow text-center space-y-3">
-                            <div class="h-14 w-14 bg-blue-100 rounded-xl flex items-center justify-center mx-auto">
-                                <svg class="w-7 h-7 text-blue-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+                    </div> -->
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button onclick="document.getElementById('rewards').scrollIntoView({behavior: 'smooth'})" class="px-8 py-4 bg-teal-500 hover:bg-teal-600 text-white font-bold rounded-xl transition shadow-lg shadow-teal-500/25 flex items-center justify-center">
+                            Pre-order Now (coming soon)
+                            <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
+                        </button>
+                        <button class="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl backdrop-blur-sm transition flex items-center justify-center border border-white/10">
+                            <i data-lucide="play-circle" class="mr-2 h-5 w-5"></i>
+                            Watch Video (coming soon)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Hero Image Placeholder -->
+                <div class="lg:col-span-5 mt-12 lg:mt-0">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-gradient-to-b from-slate-800 to-slate-900 aspect-[4/5] flex flex-col items-center justify-center group">
+                        <!-- Abstract Representation of the Ecosystem -->
+                        <div class="relative w-64 h-64">
+                            <!-- Center App -->
+                            <div class="absolute inset-0 flex items-center justify-center z-20">
+                                <div class="w-24 h-48 bg-slate-900 border-4 border-slate-700 rounded-3xl shadow-2xl flex flex-col items-center pt-4">
+                                    <div class="w-16 h-24 bg-teal-500/20 rounded-lg animate-pulse-slow"></div>
+                                </div>
                             </div>
-                            <div class="text-2xl font-black text-slate-800">90%+</div>
-                            <div class="text-xs text-slate-500">Adults use smartphones daily</div>
-                        </div>
-                        <div class="bg-white p-5 rounded-xl border border-slate-200/60 pop-shadow text-center space-y-3">
-                            <div class="h-14 w-14 bg-amber-100 rounded-xl flex items-center justify-center mx-auto">
-                                <svg class="w-7 h-7 text-amber-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                            <!-- Orbiting Devices -->
+                            <div class="absolute inset-0 pointer-events-none">
+
+                            <!-- Camera -->
+                            <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-6
+                                        z-30 bg-slate-900/90 backdrop-blur
+                                        border border-slate-600
+                                        rounded-xl px-4 py-3 shadow-2xl">
+                                <i data-lucide="camera" class="h-7 w-7 text-teal-400 mx-auto"></i>
+                                <span class="block mt-1 text-xs text-slate-300 text-center">AI Camera</span>
                             </div>
-                            <div class="text-2xl font-black text-slate-800">46%</div>
-                            <div class="text-xs text-slate-500">Time spent in office</div>
-                        </div>
-                        <div class="bg-white p-5 rounded-xl border border-slate-200/60 pop-shadow text-center space-y-3">
-                            <div class="h-14 w-14 bg-red-100 rounded-xl flex items-center justify-center mx-auto">
-                                <svg class="w-7 h-7 text-red-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+
+                            <!-- GPS -->
+                            <div class="absolute right-0 top-1/2 translate-x-6 -translate-y-1/2
+                                        z-30 bg-slate-900/90 backdrop-blur
+                                        border border-slate-600
+                                        rounded-xl px-4 py-3 shadow-2xl">
+                                <i data-lucide="map-pin" class="h-7 w-7 text-orange-400 mx-auto"></i>
+                                <span class="block mt-1 text-xs text-slate-300 text-center">Tracking</span>
                             </div>
-                            <div class="text-2xl font-black text-slate-800">53%</div>
-                            <div class="text-xs text-slate-500">Dogs home alone 5–8 hrs/day</div>
-                        </div>
-                    </div>`,
-                script: "“Over 90% of adults use smartphones daily, while hybrid work keeps pets home alone for large parts of the day.”"
-            },
-            {
-                title: `Pet care solutions are fragmented, reactive, and lack intelligence. <span class="block text-red-500 font-bold mt-2">Care Has Not Caught Up</span>`,
-                icon: `<svg class="w-12 h-12 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a4 4 0 0 0 0 8"/><path d="M14 11a4 4 0 0 0 0-8"/><path d="M9 15 15 9"/></svg>`,
-                content: `
-                    <div class="flex justify-around items-center h-48">
-                        <div class="flex flex-col items-center opacity-50">
-                            <div class="p-4 bg-slate-100 rounded-full mb-2 text-xl">📷</div>
-                            <span class="text-xs">Camera</span>
-                        </div>
-                        <div class="h-px w-8 bg-red-200 border-dashed border-t-2"></div>
-                        <div class="flex flex-col items-center opacity-50">
-                            <div class="p-4 bg-slate-100 rounded-full mb-2 text-xl">🥣</div>
-                            <span class="text-xs">Feeder</span>
-                        </div>
-                        <div class="h-px w-8 bg-red-200 border-dashed border-t-2"></div>
-                        <div class="flex flex-col items-center opacity-50">
-                            <div class="p-4 bg-slate-100 rounded-full mb-2 text-xl">📱</div>
-                            <span class="text-xs">Basic App</span>
-                        </div>
-                    </div>`,
-                script: "“Pet care solutions are fragmented, reactive, and lack intelligence.”"
-            },
-            {
-                title: "The Pain Point: Emotional + Financial Cost",
-                icon: `<svg class="w-12 h-12 text-red-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>`,
-                content: `
-                    <div class="space-y-4">
-                        <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-500 pop-shadow">
-                            <p class="text-lg font-bold text-red-700 text-left">70% of Owners</p>
-                            <p class="text-sm text-red-600 text-left">Feel anxiety/guilt leaving pets alone.</p>
-                        </div>
-                        <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-500 pop-shadow">
-                            <p class="text-lg font-bold text-red-700 text-left">1 in 3 pets</p>
-                            <p class="text-sm text-red-600 text-left">Require emergency veterinary care annually </p>
-                        </div>
-                    </div>`,
-                script: "“70%+ of owners feel anxiety leaving pets alone, with health issues often detected too late.”"
-            },
-            {
-                title: "Introducing Aura Ecosystem",
-                icon: `<svg class="w-12 h-12 text-blue-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>`,
-                content: `
-                    <div class="bg-gradient-to-br from-blue-600 to-indigo-700 p-8 rounded-2xl text-white text-center">
-                        <div class="text-sm font-bold tracking-[0.2em] mb-2">AURA ECOSYSTEM</div>
-                        <div class="text-3xl font-black mb-4">Unified Intelligence</div>
-                        <div class="grid grid-cols-3 gap-2">
-                            <div class="bg-white/10 p-2 rounded text-[10px]">MONITOR</div>
-                            <div class="bg-white/10 p-2 rounded text-[10px]">ANALYZE</div>
-                            <div class="bg-white/10 p-2 rounded text-[10px]">REACT</div>
-                        </div>
-                    </div>`,
-                script: "“Furrywatch connects monitoring, insights, and action into one seamless system.”"
-            },
-            {   title: "Three Devices. One Mind.",
-                icon: ``,
-                content: `
-                    <div class="grid grid-cols-3 gap-4 w-full">
-                        <!-- Camera -->
-                        <div class="bg-white rounded-xl p-4 border border-slate-200/60 pop-shadow text-left space-y-2">
-                            <div class="h-10 w-10 bg-teal-100 rounded-lg flex items-center justify-center">
-                                <svg class="w-5 h-5 text-teal-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg>
+
+                            <!-- Smart Crate -->
+                            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-6
+                                        z-30 bg-slate-900/90 backdrop-blur
+                                        border border-slate-600
+                                        rounded-xl px-4 py-3 shadow-2xl">
+                                <i data-lucide="home" class="h-7 w-7 text-indigo-400 mx-auto"></i>
+                                <span class="block mt-1 text-xs text-slate-300 text-center">Smart Crate</span>
                             </div>
-                            <div class="text-base font-bold text-slate-800">Sentinel Smart Camera</div>
-                            <p class="text-xs text-slate-500 leading-snug">AI-powered monitoring — distinguishes playing, sleeping & distress.</p>
-                            <ul class="space-y-1 text-xs text-slate-400">
-                                <li class="flex items-center gap-1"><span class="text-teal-500">✓</span> 1080p Night Vision</li>
-                                <li class="flex items-center gap-1"><span class="text-teal-500">✓</span> Two-way Audio</li>
-                                <li class="flex items-center gap-1"><span class="text-teal-500">✓</span> Treat Dispenser Compatible</li>
-                            </ul>
-                        </div>
-                        <!-- Collar -->
-                        <div class="bg-white rounded-xl p-4 border border-slate-200/60 pop-shadow text-left space-y-2">
-                            <div class="h-10 w-10 bg-orange-100 rounded-lg flex items-center justify-center">
-                                <svg class="w-5 h-5 text-orange-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="22" y1="12" x2="19" y2="12"/><line x1="5" y1="12" x2="2" y2="12"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+
+                            <!-- AI Core -->
+                            <div class="absolute left-0 top-1/2 -translate-x-6 -translate-y-1/2
+                                        z-30 bg-slate-900/90 backdrop-blur
+                                        border border-slate-600
+                                        rounded-xl px-4 py-3 shadow-2xl">
+                                <i data-lucide="cpu" class="h-7 w-7 text-purple-400 mx-auto"></i>
+                                <span class="block mt-1 text-xs text-slate-300 text-center">AI Enabled <br>Safety</span>
                             </div>
-                            <div class="text-base font-bold text-slate-800">Guardian GPS Collar</div>
-                            <p class="text-xs text-slate-500 leading-snug">Real-time location tracking combined with vital sign monitoring.</p>
-                            <ul class="space-y-1 text-xs text-slate-400">
-                                <li class="flex items-center gap-1"><span class="text-orange-500">✓</span> Global LTE Tracking</li>
-                                <li class="flex items-center gap-1"><span class="text-orange-500">✓</span> Activity & Sleep Analysis</li>
-                                <li class="flex items-center gap-1"><span class="text-orange-500">✓</span> Smart Training</li>
-                            </ul>
-                        </div>
-                        <!-- Crate -->
-                        <div class="bg-white rounded-xl p-4 border border-slate-200/60 pop-shadow text-left space-y-2">
-                            <div class="h-10 w-10 bg-indigo-100 rounded-lg flex items-center justify-center">
-                                <svg class="w-5 h-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+
+                            <!-- AI Core -->
+                            <!-- <div class="absolute left-0 top-1/2 -translate-x-6 -translate-y-1/2
+                                        z-30 bg-slate-900/90 backdrop-blur
+                                        border border-slate-600
+                                        rounded-xl px-4 py-3 shadow-2xl">
+                                <i data-lucide="collar" class="h-7 w-7 text-purple-400 mx-auto"></i>
+                                <span class="block mt-1 text-xs text-slate-300 text-center">E Collar</span>
+                            </div> -->
+
                             </div>
-                            <div class="text-base font-bold text-slate-800">Sanctuary Smart Crate</div>
-                            <p class="text-xs text-slate-500 leading-snug">More than a cage — an automated care station for safety & comfort.</p>
-                            <ul class="space-y-1 text-xs text-slate-400">
-                                <li class="flex items-center gap-1"><span class="text-indigo-500">✓</span> Auto-locking Mechanism</li>
-                                <li class="flex items-center gap-1"><span class="text-indigo-500">✓</span> Treat & Food Dispenser</li>
-                                <li class="flex items-center gap-1"><span class="text-indigo-500">✓</span> Climate Sensor</li>
-                            </ul>
+                            
                         </div>
-                    </div>`,
-                script: `<div class="not-italic flex justify-center">
-                    <div class="relative mx-auto border-gray-800 bg-gray-800 border-[10px] rounded-[2rem] h-[420px] w-[210px] shadow-2xl">
-                        <div class="h-[24px] w-[2px] bg-gray-800 absolute -left-[12px] top-[50px] rounded-l-lg"></div>
-                        <div class="h-[34px] w-[2px] bg-gray-800 absolute -left-[12px] top-[88px] rounded-l-lg"></div>
-                        <div class="h-[34px] w-[2px] bg-gray-800 absolute -left-[12px] top-[128px] rounded-l-lg"></div>
-                        <div class="h-[48px] w-[2px] bg-gray-800 absolute -right-[12px] top-[100px] rounded-r-lg"></div>
-                        <div class="rounded-[1.5rem] overflow-hidden w-full h-full bg-slate-100 relative">
-                            <div class="bg-teal-600 h-24 p-4 text-white rounded-b-2xl">
-                                <div class="flex justify-between items-center mt-2">
+                        <p class="mt-12 text-slate-400 text-sm font-medium">Interactive Ecosystem Demo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mission & Vision (Apple Style) -->
+    <section class="py-32 bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col items-center text-center space-y-12">
+                
+                <!-- Mission -->
+                <div class="max-w-4xl">
+                    <span class="text-teal-600 font-bold tracking-widest uppercase text-xs mb-6 block">Our Mission</span>
+                    <h2 class="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tighter mb-8 leading-tight">
+                        Safety without<br>boundaries.
+                    </h2>
+                    <p class="text-2xl md:text-3xl font-light text-slate-500 leading-normal max-w-3xl mx-auto">
+                        To erase the distance between you and the life you love. We build technology that empowers connection and transforms anxiety into absolute assurance.
+                    </p>
+                </div>
+
+                <!-- Minimalist Divider -->
+                <div class="h-16 w-px bg-gradient-to-b from-slate-200 to-transparent"></div>
+
+                <!-- Vision -->
+                <div class="max-w-4xl">
+                    <span class="text-teal-600 font-bold tracking-widest uppercase text-xs mb-6 block">Our Vision</span>
+                    <h2 class="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tighter mb-8 leading-tight">
+                        Care, redefined.
+                    </h2>
+                    <p class="text-2xl md:text-3xl font-light text-slate-500 leading-normal max-w-3xl mx-auto">
+                        A world where every pet is understood, protected, and always just a heartbeat away. Where "alone" never means "unsafe."
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section id="features" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-teal-600 font-semibold tracking-wide uppercase text-sm mb-2">Hardware Features</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-slate-900">Three Devices. One Mind.</h3>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Camera -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition duration-300 border border-slate-100 group">
+                    <div class="h-14 w-14 bg-teal-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-teal-600 transition duration-300">
+                        <i data-lucide="video" class="h-7 w-7 text-teal-600 group-hover:text-white transition"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Sentinel Smart Camera</h4>
+                    <p class="text-slate-600 mb-4">AI-powered monitoring that distinguishes between playing, sleeping, and distress.</p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center"><i data-lucide="check" class="h-4 w-4 text-teal-500 mr-2"></i> 1080p Night Vision</li>
+                        <li class="flex items-center"><i data-lucide="check" class="h-4 w-4 text-teal-500 mr-2"></i> Two-way Audio</li>
+                        <li class="flex items-center"><i data-lucide="check" class="h-4 w-4 text-teal-500 mr-2"></i> Treat Dispenser Compatible</li>
+                    </ul>
+                </div>
+
+                <!-- Collar -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition duration-300 border border-slate-100 group">
+                    <div class="h-14 w-14 bg-orange-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-orange-500 transition duration-300">
+                        <i data-lucide="locate-fixed" class="h-7 w-7 text-orange-600 group-hover:text-white transition"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Guardian GPS Collar</h4>
+                    <p class="text-slate-600 mb-4">Real-time location tracking combined with vital sign monitoring (Heart Rate, Temp).</p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center"><i data-lucide="check" class="h-4 w-4 text-orange-500 mr-2"></i> Global LTE Tracking</li>
+                        <li class="flex items-center"><i data-lucide="check" class="h-4 w-4 text-orange-500 mr-2"></i> Activity & Sleep Analysis</li>
+                        <li class="flex items-center"><i data-lucide="check" class="h-4 w-4 text-orange-500 mr-2"></i> Smart training</li>
+                    </ul>
+                </div>
+
+                <!-- Crate -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition duration-300 border border-slate-100 group">
+                    <div class="h-14 w-14 bg-indigo-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-indigo-600 transition duration-300">
+                        <i data-lucide="home" class="h-7 w-7 text-indigo-600 group-hover:text-white transition"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Sanctuary Smart Crate</h4>
+                    <p class="text-slate-600 mb-4">More than a cage. It's an automated care station for safety and comfort.</p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center"><i data-lucide="check" class="h-4 w-4 text-indigo-500 mr-2"></i> Auto-locking Mechanism</li>
+                        <li class="flex items-center"><i data-lucide="check" class="h-4 w-4 text-indigo-500 mr-2"></i> Treat & Food Dispenser</li>
+                        <li class="flex items-center"><i data-lucide="check" class="h-4 w-4 text-indigo-500 mr-2"></i> Climate Sensor</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Showcase Section -->
+    <section id="app" class="py-24 bg-slate-900 text-white overflow-hidden relative">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid)" />
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="lg:grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-teal-400 font-semibold tracking-wide uppercase text-sm mb-2">The Control Center</h2>
+                    <h3 class="text-4xl font-bold mb-6">One App to Rule Them All</h3>
+                    <p class="text-slate-300 text-lg mb-8">
+                        Forget switching between apps. The FurryWatch app consolidates video feeds, location data, and health metrics into a single dashboard.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-teal-500 text-white">
+                                    <i data-lucide="activity" class="h-6 w-6"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium">Real-time Health Insights</h4>
+                                <p class="mt-2 text-slate-400">Receive alerts if your pet's temperature rises or activity levels drop unexpectedly.</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-teal-500 text-white">
+                                    <i data-lucide="map" class="h-6 w-6"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium">Geofencing</h4>
+                                <p class="mt-2 text-slate-400">Set safe zones. If the collar breaches the zone, the crate can auto-unlock for return, or lock for safety.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 lg:mt-0 flex justify-center">
+                    <!-- Mobile App Mockup -->
+                    <div class="relative mx-auto border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px] shadow-2xl">
+                        <div class="h-[32px] w-[3px] bg-gray-800 absolute -left-[17px] top-[72px] rounded-l-lg"></div>
+                        <div class="h-[46px] w-[3px] bg-gray-800 absolute -left-[17px] top-[124px] rounded-l-lg"></div>
+                        <div class="h-[46px] w-[3px] bg-gray-800 absolute -left-[17px] top-[178px] rounded-l-lg"></div>
+                        <div class="h-[64px] w-[3px] bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg"></div>
+                        <div class="rounded-[2rem] overflow-hidden w-full h-full bg-slate-100 relative">
+                            <!-- Screen Content -->
+                            <div class="bg-teal-600 h-32 p-6 text-white rounded-b-3xl">
+                                <div class="flex justify-between items-center mt-4">
                                     <div>
-                                        <div class="text-[9px] opacity-80">Good Morning,</div>
-                                        <div class="font-bold text-sm">Buddy is Active</div>
+                                        <div class="text-xs opacity-80">Good Morning,</div>
+                                        <div class="font-bold text-xl">Buddy is Active</div>
                                     </div>
-                                    <div class="h-7 w-7 bg-white/20 rounded-full flex items-center justify-center">
-                                        <i data-lucide="dog" class="h-4 w-4"></i>
+                                    <div class="h-10 w-10 bg-white/20 rounded-full flex items-center justify-center">
+                                        <i data-lucide="dog" class="h-6 w-6"></i>
                                     </div>
                                 </div>
                             </div>
-                            <div class="p-3 space-y-3 -mt-6">
-                                <div class="bg-white p-3 rounded-lg shadow-lg flex items-center justify-between">
-                                    <div class="flex items-center space-x-2">
-                                        <div class="bg-green-100 p-1.5 rounded-md">
-                                            <i data-lucide="heart-pulse" class="h-3.5 w-3.5 text-green-600"></i>
+                            
+                            <div class="p-4 space-y-4 -mt-8">
+                                <div class="bg-white p-4 rounded-xl shadow-lg flex items-center justify-between">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="bg-green-100 p-2 rounded-lg">
+                                            <i data-lucide="heart-pulse" class="h-5 w-5 text-green-600"></i>
                                         </div>
                                         <div>
-                                            <div class="text-[8px] text-gray-500">Heart Rate</div>
-                                            <div class="font-bold text-xs text-slate-800">78 BPM</div>
+                                            <div class="text-xs text-gray-500">Heart Rate</div>
+                                            <div class="font-bold text-slate-800">78 BPM</div>
                                         </div>
                                     </div>
-                                    <div class="text-[8px] text-green-600 bg-green-50 px-1.5 py-0.5 rounded">Normal</div>
+                                    <div class="text-xs text-green-600 bg-green-50 px-2 py-1 rounded">Normal</div>
                                 </div>
-                                <div class="rounded-lg shadow-lg overflow-hidden h-28 relative">
-                                    <div class="absolute inset-0 flex items-center justify-center bg-center bg-cover bg-no-repeat" style="background-image: url('dog-barking-home.jpg');">
-                                        <i data-lucide="play-circle" class="h-8 w-8 text-white opacity-80"></i>
-                                    </div>
-                                    <div class="absolute bottom-1.5 left-2 text-white text-[8px] font-bold">Living Room Cam</div>
-                                    <div class="absolute bottom-1.5 right-2 flex items-center space-x-0.5 text-white text-[7px] opacity-80">
-                                        <i data-lucide="switch-camera" class="h-3 w-3"></i>
-                                        <span>Change</span>
-                                    </div>
-                                    <div class="absolute top-1.5 right-2 flex items-center space-x-1">
-                                        <div class="h-1.5 w-1.5 bg-red-500 rounded-full animate-pulse"></div>
-                                        <span class="text-[8px] text-white">LIVE</span>
-                                    </div>
+
+                                <div class="p-0 rounded-xl shadow-lg overflow-hidden h-40 relative group">
+  
+                                <!-- Camera Background -->
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center bg-center bg-contain bg-no-repeat"
+                                    style="background-image: url('../furryWatch/Images/dog-barking-home.jpg');"
+                                >
+                                    <i data-lucide="play-circle" class="h-10 w-10 text-white opacity-80"></i>
                                 </div>
-                                <div class="grid grid-cols-2 gap-2">
-                                    <div class="bg-white p-2 rounded-lg shadow border border-slate-100 text-center">
-                                        <i data-lucide="lock" class="h-4 w-4 mx-auto text-indigo-500 mb-1"></i>
-                                        <div class="text-[8px] font-bold text-slate-700">Lock Crate</div>
+
+                                <!-- Camera Label -->
+                                <div class="absolute bottom-2 left-3 text-white text-xs font-bold">
+                                    Living Room Cam
+                                </div>
+
+                                <!-- Change Camera Button -->
+                                <button
+                                    class="absolute bottom-2 right-2 flex items-center space-x-1
+                                        text-white text-[10px] opacity-80
+                                        hover:opacity-100 transition"
+                                >
+                                    <i data-lucide="switch-camera" class="h-4 w-4"></i>
+                                    <span>Change</span>
+                                </button>
+
+                                <!-- LIVE Indicator -->
+                                <div class="absolute top-2 right-3 flex items-center space-x-1">
+                                    <div class="h-2 w-2 bg-red-500 rounded-full animate-pulse"></div>
+                                    <span class="text-xs text-white">LIVE</span>
+                                </div>
+
+                                </div>
+
+
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div class="bg-white p-3 rounded-xl shadow border border-slate-100 text-center">
+                                        <i data-lucide="lock" class="h-6 w-6 mx-auto text-indigo-500 mb-2"></i>
+                                        <div class="text-xs font-bold text-slate-700">Lock Crate</div>
                                     </div>
-                                    <div class="bg-white p-2 rounded-lg shadow border border-slate-100 text-center">
-                                        <i data-lucide="fan" class="h-4 w-4 mx-auto text-pink-500 mb-1"></i>
-                                        <div class="text-[8px] font-bold text-slate-700">Ventilation</div>
+                                    <div class="bg-white p-3 rounded-xl shadow border border-slate-100 text-center">
+                                        <i data-lucide="fan" class="h-6 w-6 mx-auto text-pink-500 mb-2"></i>
+
+                                        <div class="text-xs font-bold text-slate-700">Ventilation</div>
                                     </div>
-                                    <div class="bg-white p-2 rounded-lg shadow border border-slate-100 text-center">
-                                        <i data-lucide="utensils" class="h-4 w-4 mx-auto text-pink-500 mb-1"></i>
-                                        <div class="text-[8px] font-bold text-slate-700">Food</div>
+                                    <div class="bg-white p-3 rounded-xl shadow border border-slate-100 text-center">
+                                        <i data-lucide="utensils" class="h-6 w-6 mx-auto text-pink-500 mb-2"></i>
+                                        <div class="text-xs font-bold text-slate-700">Dispense <br>Food</div>
                                     </div>
-                                    <div class="bg-white p-2 rounded-lg shadow border border-slate-100 text-center">
-                                        <i data-lucide="droplet" class="h-4 w-4 mx-auto text-pink-500 mb-1"></i>
-                                        <div class="text-[8px] font-bold text-slate-700">Water</div>
+                                    <div class="bg-white p-3 rounded-xl shadow border border-slate-100 text-center">
+                                        <i data-lucide="droplet" class="h-6 w-6 mx-auto text-pink-500 mb-2"></i>
+                                        <div class="text-xs font-bold text-slate-700">Dispense <br> Water</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>`
-            },
-            {
-                title: "Beyond Monitoring",
-                icon: `<svg class="w-12 h-12 text-green-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>`,
-                content: `
-                    <div class="grid grid-cols-2 gap-4 w-full">
-                        <div class="bg-white p-4 rounded-xl border border-slate-200/60 pop-shadow flex items-start gap-3">
-                            <div class="h-10 w-10 bg-green-100 rounded-lg flex items-center justify-center shrink-0">
-                                <svg class="w-5 h-5 text-green-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                            </div>
-                            <div class="text-left">
-                                <div class="text-sm font-bold text-slate-800">Privacy First</div>
-                                <div class="text-xs text-slate-500">Secure, encrypted data handling</div>
-                            </div>
-                        </div>
-                        <div class="bg-white p-4 rounded-xl border border-slate-200/60 pop-shadow flex items-start gap-3">
-                            <div class="h-10 w-10 bg-blue-100 rounded-lg flex items-center justify-center shrink-0">
-                                <svg class="w-5 h-5 text-blue-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M9 14h6"/><path d="M9 18h6"/><path d="M9 10h1"/></svg>
-                            </div>
-                            <div class="text-left">
-                                <div class="text-sm font-bold text-slate-800">Vet Integration</div>
-                                <div class="text-xs text-slate-500">Seamless data sharing with vets</div>
-                            </div>
-                        </div>
-                        <div class="bg-white p-4 rounded-xl border border-slate-200/60 pop-shadow flex items-start gap-3">
-                            <div class="h-10 w-10 bg-indigo-100 rounded-lg flex items-center justify-center shrink-0">
-                                <svg class="w-5 h-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
-                            </div>
-                            <div class="text-left">
-                                <div class="text-sm font-bold text-slate-800">Auto Health Logs</div>
-                                <div class="text-xs text-slate-500">AI-generated health reports</div>
-                            </div>
-                        </div>
-                        <div class="bg-white p-4 rounded-xl border border-slate-200/60 pop-shadow flex items-start gap-3">
-                            <div class="h-10 w-10 bg-red-100 rounded-lg flex items-center justify-center shrink-0">
-                                <svg class="w-5 h-5 text-red-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                            </div>
-                            <div class="text-left">
-                                <div class="text-sm font-bold text-slate-800">Predictive Diagnostics</div>
-                                <div class="text-xs text-slate-500">Early illness detection via AI</div>
-                            </div>
-                        </div>
-                    </div>`,
-                script: "“We are building the operating system for modern pet parenting.”"
-            },
-            {
-                title: "Perfect Timing",
-                icon: `<svg class="w-12 h-12 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
-                content: `
-                    <div class="grid grid-cols-3 gap-4 w-full">
-                        <div class="bg-white p-5 rounded-xl border border-slate-200/60 pop-shadow text-center space-y-3">
-                            <div class="h-14 w-14 bg-amber-100 rounded-xl flex items-center justify-center mx-auto">
-                                <svg class="w-7 h-7 text-amber-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/></svg>
-                            </div>
-                            <div class="text-sm font-bold text-slate-800 flex items-center justify-center gap-1">Pet Adoption <svg class="w-4 h-4 text-green-500 inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></div>
-                            <div class="text-xs text-slate-500">Record ownership levels across North America</div>
-                        </div>
-                        <div class="bg-white p-5 rounded-xl border border-slate-200/60 pop-shadow text-center space-y-3">
-                            <div class="h-14 w-14 bg-blue-100 rounded-xl flex items-center justify-center mx-auto">
-                                <svg class="w-7 h-7 text-blue-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
-                            </div>
-                            <div class="text-sm font-bold text-slate-800 flex items-center justify-center gap-1">Tech Maturity <svg class="w-4 h-4 text-green-500 inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></div>
-                            <div class="text-xs text-slate-500">AI, IoT & mobile now affordable at scale</div>
-                        </div>
-                        <div class="bg-white p-5 rounded-xl border border-slate-200/60 pop-shadow text-center space-y-3">
-                            <div class="h-14 w-14 bg-indigo-100 rounded-xl flex items-center justify-center mx-auto">
-                                <svg class="w-7 h-7 text-indigo-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                            </div>
-                            <div class="text-sm font-bold text-slate-800 flex items-center justify-center gap-1">Hybrid Work <svg class="w-4 h-4 text-green-500 inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></div>
-                            <div class="text-xs text-slate-500">Pets home alone more — owners want visibility</div>
-                        </div>
-                    </div>`,
-                script: "“The convergence of pet ownership, smart tech, and hybrid work creates a unique inflection point.”"
-            },            
-            {
-                title: "",
-                icon: ``,
-                content: `
-                    <div class="flex flex-col items-center text-center space-y-12 w-full">
-                        <div class="space-y-3">
-                            <div class="text-lg font-bold text-blue-600 uppercase tracking-widest">Our Mission</div>
-                            <div class="text-3xl font-extrabold text-slate-900 tracking-tight leading-snug">Safety without boundaries.</div>
-                            <p class="text-sm text-slate-500 max-w-md mx-auto leading-relaxed">To provide boundless safety for the life you love through technology you can trust.</p>
-                        </div>
-                        <div class="space-y-3">
-                            <div class="text-lg font-bold text-blue-600 uppercase tracking-widest">Our Vision</div>
-                            <div class="text-3xl font-extrabold text-slate-900 tracking-tight leading-snug">Pet care, redefined.</div>
-                            <p class="text-sm text-slate-500 max-w-md mx-auto leading-relaxed">A world Where \u201Calone\u201D never means \u201Cunsafe\u201D.</p>
-                        </div>
-                    </div>`,
-                script: "\u201COur mission is safety without boundaries \u2014 erasing the distance between pet owners and the lives they love. Our vision: a world where every pet is always understood and protected.\u201D"
-            },            
-            {                title: "Powered by Aura Ecosystem",
-                icon: `<svg class="w-12 h-12 text-yellow-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>`,
-                content: `
-                    <div class="flex items-center space-x-2">
-                        <div class="flex-1 bg-white border p-3 rounded shadow-sm text-center">
-                            <div class="text-xs font-bold">DATA</div>
-                        </div>
-                        <span class="text-blue-400">→</span>
-                        <div class="flex-1 bg-blue-600 text-white p-3 rounded shadow-sm text-center">
-                            <div class="text-xs font-bold">AI ENGINE</div>
-                        </div>
-                        <span class="text-blue-400">→</span>
-                        <div class="flex-1 bg-white border p-3 rounded shadow-sm text-center">
-                            <div class="text-xs font-bold">ALERTS</div>
-                        </div>
-                    </div>`,
-                script: "“Our platform combines real-time data with AI-driven insights to enable preventive care.”"
-            },
-            {
-                title: "A Rapidly Expanding Category",
-                icon: `<svg class="w-12 h-12 text-blue-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 17 6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg>`,
-                content: `
-                    <div class="relative h-48 w-full border-b-2 border-l-2 border-slate-200">
-                        <svg class="absolute bottom-0 left-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                            <path d="M0,90 Q30,85 50,60 T100,10" fill="none" stroke="#3b82f6" stroke-width="4" />
-                        </svg>
-                        <div class="absolute top-4 right-4 text-right">
-                            <div class="text-3xl font-bold">$20B+</div>
-                            <div class="text-xs text-slate-500 font-bold uppercase tracking-widest">Market Potential 2030</div>
-                        </div>
-                    </div>`,
-                script: "“The pet tech market is projected to exceed $20B, with strong recurring revenue potential.”"
-            },
-            {
-                title: "Scalable & Recurring Revenue",
-                icon: `<svg class="w-12 h-12 text-indigo-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.1 6.32a2 2 0 0 0 0 3.68l9.07 4.14a2 2 0 0 0 1.66 0l9.07-4.14a2 2 0 0 0 0-3.68z"/><path d="m2 12 9.07 4.14a2 2 0 0 0 1.66 0L22 12"/><path d="m2 16 9.07 4.14a2 2 0 0 0 1.66 0L22 16"/></svg>`,
-                content: `
-                    <div class="space-y-6">
-                        <div class="flex justify-between items-center p-4 bg-slate-50 rounded-lg border pop-shadow">
-                            <span class="font-bold">Hardware Sale</span>
-                            <span class="text-slate-500">Upfront Revenue</span>
-                        </div>
-                        <div class="flex justify-between items-center p-4 bg-indigo-600 text-white rounded-lg" style="box-shadow: 0 4px 20px rgba(79,70,229,0.35), 0 1px 4px rgba(0,0,0,0.1);">
-                            <span class="font-bold">Subscription</span>
-                            <span class="text-indigo-200">Recurring Insights</span>
-                        </div>
-                    </div>`,
-                script: "“Furrywatch combines hardware sales with subscription-based insights and services.”"
-            },
-            {
-                title: "Meet the Founders",
-                icon: `<svg class="w-12 h-12 text-indigo-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
-                content: `
-                    <div class="grid grid-cols-2 gap-6 w-full">
-                        <div class="flex flex-col items-center text-center space-y-2 bg-white p-4 rounded-xl border border-slate-200/60 pop-shadow">
-                            <div class="w-20 h-20 rounded-full bg-slate-200 border-2 border-indigo-200 flex items-center justify-center overflow-hidden">
-                                <svg class="w-10 h-10 text-slate-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                            </div>
-                            <div>
-                                <div class="text-sm font-bold text-slate-800">Founder 1</div>
-                                <div class="text-[10px] text-indigo-500 font-semibold uppercase tracking-wider">CEO / Co-Founder</div>
-                                <div class="text-[10px] text-slate-500 mt-1 leading-tight">Brief bio or expertise area</div>
-                            </div>
-                        </div>
-                        <div class="flex flex-col items-center text-center space-y-2 bg-white p-4 rounded-xl border border-slate-200/60 pop-shadow">
-                            <div class="w-20 h-20 rounded-full bg-slate-200 border-2 border-indigo-200 flex items-center justify-center overflow-hidden">
-                                <svg class="w-10 h-10 text-slate-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                            </div>
-                            <div>
-                                <div class="text-sm font-bold text-slate-800">Founder 2</div>
-                                <div class="text-[10px] text-indigo-500 font-semibold uppercase tracking-wider">CTO / Co-Founder</div>
-                                <div class="text-[10px] text-slate-500 mt-1 leading-tight">Brief bio or expertise area</div>
-                            </div>
-                        </div>
-                    </div>`,
-                script: "“Our founding team brings together expertise in AI, hardware engineering, and pet care to build the future of pet technology.”"
-            },
-            {
-                title: "From Presence to Connection",
-                icon: `<svg class="w-12 h-12 text-blue-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>`,
-                content: `
-                    <div class="text-center py-10">
-                        <div class="text-5xl mb-4">🏠 ❤️ 📱</div>
-                        <div class="text-2xl font-bold text-slate-800">Transforming Pet Care</div>
-                    </div>`,
-                script: "“Furrywatch transforms pet care from reactive to intelligent, from distant to connected.”"
-            },
-            {
-                title: "Investor Resources",
-                icon: `<svg class="w-12 h-12 text-slate-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>`,
-                content: `
-                    <div class="space-y-4 w-full">
-                        <a href="#" class="flex items-center gap-4 p-4 bg-slate-50 rounded-xl border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition group">
-                            <div class="h-10 w-10 bg-blue-100 rounded-lg flex items-center justify-center shrink-0">
-                                <svg class="w-5 h-5 text-blue-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
-                            </div>
-                            <div class="text-left">
-                                <div class="text-sm font-bold text-slate-800 group-hover:text-blue-700">APPA Market Data 2025</div>
-                                <div class="text-xs text-slate-500">Industry report on pet market trends</div>
-                            </div>
-                        </a>
-                        <a href="#" class="flex items-center gap-4 p-4 bg-slate-50 rounded-xl border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition group">
-                            <div class="h-10 w-10 bg-green-100 rounded-lg flex items-center justify-center shrink-0">
-                                <svg class="w-5 h-5 text-green-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
-                            </div>
-                            <div class="text-left">
-                                <div class="text-sm font-bold text-slate-800 group-hover:text-green-700">Pew Research Mobile Trends</div>
-                                <div class="text-xs text-slate-500">Smartphone & digital adoption data</div>
-                            </div>
-                        </a>
-                        <a href="#" class="flex items-center gap-4 p-4 bg-slate-50 rounded-xl border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition group">
-                            <div class="h-10 w-10 bg-indigo-100 rounded-lg flex items-center justify-center shrink-0">
-                                <svg class="w-5 h-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
-                            </div>
-                            <div class="text-left">
-                                <div class="text-sm font-bold text-slate-800 group-hover:text-indigo-700">Gallup Workplace Insights</div>
-                                <div class="text-xs text-slate-500">Hybrid work & remote trends</div>
-                            </div>
-                        </a>
-                    </div>`,
-                script: "“Here are the key sources backing our market thesis.”"
-            }
-        ];
-
-        let currentIndex = 0;
-
-        function renderSlide() {
-            const slide = slides[currentIndex];
-            const contentArea = document.getElementById('slide-content-area');
-            const counter = document.getElementById('slide-counter');
-            const scriptArea = document.getElementById('presenter-script');
-            const dotIndicators = document.getElementById('dot-indicators');
-
-            // Update Text & Main Content
-            counter.innerText = `SLIDE ${currentIndex + 1} / ${slides.length}`;
-            scriptArea.innerHTML = slide.script;
-
-            contentArea.innerHTML = `
-                ${slide.icon ? `<div class="transition-transform duration-500">${slide.icon}</div>` : ''}
-                ${slide.title ? `<h1 class="text-3xl md:text-4xl font-black text-slate-900 leading-tight max-w-2xl">${slide.title}</h1>` : ''}
-                <div class="w-full max-w-md">
-                    ${slide.content}
                 </div>
-            `;
+            </div>
+        </div>
+    </section>
 
-            // Update Dots
-            dotIndicators.innerHTML = slides.map((_, i) => `
-                <div class="h-1 rounded-full transition-all ${i === currentIndex ? 'w-4 bg-blue-600' : 'w-1 bg-slate-200'}"></div>
-            `).join('');
+    <!-- Rewards / Pledge Section -->
+    <!-- <section id="rewards" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900">Support the Project</h2>
+                <p class="mt-4 text-slate-600 max-w-2xl mx-auto">Choose a reward level to bring Furry Watch to life. All tiers include a 6-month free subscription to the premium app features.</p>
+            </div>
 
-            // Re-initialize Lucide icons for newly injected HTML
-            if (typeof lucide !== 'undefined') lucide.createIcons();
-        }
+            <div class="grid md:grid-cols-3 gap-8">
+               
+                <div class="border border-slate-200 rounded-2xl p-6 hover:border-teal-500 hover:shadow-xl transition relative bg-white">
+                    <h3 class="text-lg font-bold text-slate-900">Essentials Pack</h3>
+                    <div class="mt-4 flex items-baseline text-slate-900">
+                        <span class="text-4xl font-extrabold tracking-tight">$149</span>
+                        <span class="ml-1 text-xl font-semibold text-slate-500 strike-through line-through">$249</span>
+                    </div>
+                    <p class="mt-4 text-slate-500 text-sm">Get the Guardian GPS Collar and 1 year of app subscription. Perfect for outdoor cats and dogs.</p>
+                    
+                    <ul class="mt-6 space-y-4">
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="flex-shrink-0 h-5 w-5 text-teal-500"></i>
+                            <span class="ml-3 text-sm text-slate-600">Guardian GPS Collar</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="flex-shrink-0 h-5 w-5 text-teal-500"></i>
+                            <span class="ml-3 text-sm text-slate-600">1 Year App Access</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="flex-shrink-0 h-5 w-5 text-teal-500"></i>
+                            <span class="ml-3 text-sm text-slate-600">Beta Tester Community Access</span>
+                        </li>
+                    </ul>
+                    <div class="mt-8">
+                        <button class="w-full bg-slate-800 border border-transparent rounded-lg py-3 px-4 text-sm font-medium text-white hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 transition">Select Reward</button>
+                        <p class="mt-2 text-xs text-center text-slate-400">Estimated Delivery: Dec 2025</p>
+                    </div>
+                </div>
 
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % slides.length;
-            renderSlide();
-        }
+                
+                <div class="border-2 border-teal-500 rounded-2xl p-6 shadow-2xl relative bg-white transform md:-translate-y-4">
+                    <div class="absolute top-0 right-0 -mt-3 -mr-3 px-3 py-1 bg-teal-500 text-white text-xs font-bold uppercase tracking-wide rounded-full shadow-md">Most Popular</div>
+                    <h3 class="text-lg font-bold text-slate-900">Early Bird Ecosystem</h3>
+                    <div class="mt-4 flex items-baseline text-slate-900">
+                        <span class="text-5xl font-extrabold tracking-tight">$399</span>
+                        <span class="ml-1 text-xl font-semibold text-slate-500 line-through">$699</span>
+                    </div>
+                    <p class="mt-4 text-slate-500 text-sm">The complete package. Get the Camera, Collar, and Crate at our lowest price ever.</p>
+                    
+                    <ul class="mt-6 space-y-4">
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="flex-shrink-0 h-5 w-5 text-teal-500"></i>
+                            <span class="ml-3 text-sm text-slate-600 font-semibold">Smart Sentinel Camera</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="flex-shrink-0 h-5 w-5 text-teal-500"></i>
+                            <span class="ml-3 text-sm text-slate-600 font-semibold">Guardian GPS Collar</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="flex-shrink-0 h-5 w-5 text-teal-500"></i>
+                            <span class="ml-3 text-sm text-slate-600 font-semibold">Sanctuary Smart Crate</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="flex-shrink-0 h-5 w-5 text-teal-500"></i>
+                            <span class="ml-3 text-sm text-slate-600">Lifetime Premium App Access</span>
+                        </li>
+                    </ul>
+                    <div class="mt-8">
+                        <button class="w-full bg-teal-600 border border-transparent rounded-lg py-4 px-4 text-base font-bold text-white hover:bg-teal-700 focus:outline-none transition shadow-lg shadow-teal-500/30">Pledge $399</button>
+                        <p class="mt-2 text-xs text-center text-slate-400">124 left of 500</p>
+                    </div>
+                </div>
 
-        function prevSlide() {
-            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-            renderSlide();
-        }
+                
+                <div class="border border-slate-200 rounded-2xl p-6 hover:border-teal-500 hover:shadow-xl transition relative bg-white">
+                    <h3 class="text-lg font-bold text-slate-900">Double Trouble Pack</h3>
+                    <div class="mt-4 flex items-baseline text-slate-900">
+                        <span class="text-4xl font-extrabold tracking-tight">$699</span>
+                        <span class="ml-1 text-xl font-semibold text-slate-500 line-through">$1200</span>
+                    </div>
+                    <p class="mt-4 text-slate-500 text-sm">Have two pets? Get double the gear and manage them both in one app profile.</p>
+                    
+                    <ul class="mt-6 space-y-4">
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="flex-shrink-0 h-5 w-5 text-teal-500"></i>
+                            <span class="ml-3 text-sm text-slate-600">2x All Hardware (Cam, Collar, Crate)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="flex-shrink-0 h-5 w-5 text-teal-500"></i>
+                            <span class="ml-3 text-sm text-slate-600">Custom Engraved Tags</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="flex-shrink-0 h-5 w-5 text-teal-500"></i>
+                            <span class="ml-3 text-sm text-slate-600">Developer API Access</span>
+                        </li>
+                    </ul>
+                    <div class="mt-8">
+                        <button class="w-full bg-slate-800 border border-transparent rounded-lg py-3 px-4 text-sm font-medium text-white hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 transition">Select Reward</button>
+                        <p class="mt-2 text-xs text-center text-slate-400">Estimated Delivery: Jan 2026</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
 
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') nextSlide();
-            if (e.key === 'ArrowLeft') prevSlide();
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-slate-50">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-slate-900 mb-12">Frequently Asked Questions</h2>
+            
+            <div class="space-y-4">
+                 <details class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 group">
+                    <summary class="flex justify-between items-center cursor-pointer font-medium text-slate-900">
+                        How does the Aura Ecosystem work?
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="h-5 w-5 text-slate-500"></i>
+                        </span>
+                    </summary>
+                    <p class="mt-4 text-slate-600 text-m leading-relaxed">
+                        The system connects your pet’s smart collar, smart crate, and home app through a secure cloud network.
+Sensors collect real-time health, GPS, and environmental data, which you can monitor and control through one unified mobile or web app.
+                    </p>
+                </details>
+
+                <details class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 group">
+                    <summary class="flex justify-between items-center cursor-pointer font-medium text-slate-900">
+                        What’s the difference between this system and traditional pet trackers?
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="h-5 w-5 text-slate-500"></i>
+                        </span>
+                    </summary>
+                    <p class="mt-4 text-slate-600 text-m leading-relaxed">
+                        Unlike standalone GPS trackers or health devices, this ecosystem provides:
+
+Combined health + GPS + behavior + environmental management
+
+A fully integrated smart crate with automation
+
+Predictive AI insights
+
+One centralized app for all devices
+
+Real-time monitoring even when you’re away
+                    </p>
+                </details>
+
+                <details class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 group">
+                    <summary class="flex justify-between items-center cursor-pointer font-medium text-slate-900">
+                        Is the system safe for pets?
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="h-5 w-5 text-slate-500"></i>
+                        </span>
+                    </summary>
+                    <p class="mt-4 text-slate-600 text-m leading-relaxed">
+                        Yes.
+All sensors are non-invasive, and the crate is designed with:
+
+Fail-safe gate locking
+
+Rounded edges
+
+Smart ventilation
+
+Overheat protection
+
+Wireless communication compliant with pet safety standards
+                    </p>
+                </details>
+
+                <details class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 group">
+                    <summary class="flex justify-between items-center cursor-pointer font-medium text-slate-900">
+                        What’s the range of the GPS?
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="h-5 w-5 text-slate-500"></i>
+                        </span>
+                    </summary>
+                    <p class="mt-4 text-slate-600 text-m leading-relaxed">
+                        There is no range limit.
+As long as the collar has LTE connectivity, you can track your pet’s location from anywhere in the world through the app.
+                    </p>
+                </details>
+
+                <details class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 group">
+                    <summary class="flex justify-between items-center cursor-pointer font-medium text-slate-900">
+                        How do I get started?
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="h-5 w-5 text-slate-500"></i>
+                        </span>
+                    </summary>
+                    <p class="mt-4 text-slate-600 text-m leading-relaxed">
+                        Set up your account in the app > Pair the smart collar > Connect the smart crate to Wi-Fi > Customize alerts, health monitoring, and geofences > Start tracking and controlling your pet’s environment instantly
+                    </p>
+                </details>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8">
+            <div class="col-span-1 md:col-span-2">
+                <div class="flex items-center space-x-2 mb-4">
+                    <i data-lucide="paw-print" class="h-6 w-6 text-teal-500 fill-current"></i>
+                    <span class="font-bold text-xl text-white">Furry Watch</span>
+                </div>
+                <p class="text-sm text-slate-400 max-w-xs">
+                    Reinventing pet care through technology. Join us in creating a safer, happier world for our furry friends.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Product</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-teal-400 transition">Features</a></li>
+                    <li><a href="#" class="hover:text-teal-400 transition">Tech Specs</a></li>
+                    <li><a href="#" class="hover:text-teal-400 transition">Subscription</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Support</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-teal-400 transition">Help Center</a></li>
+                    <li><a href="#" class="hover:text-teal-400 transition">Contact Us</a></li>
+                    <li><a href="#" class="hover:text-teal-400 transition">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+            &copy; 2025 FurryWatch Inc. All rights reserved. Concept Design.
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Simple smooth scroll (already native to HTML/CSS mostly, but ensuring button works)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
-
-        // Initial render
-        renderSlide();
     </script>
 </body>
 </html>
