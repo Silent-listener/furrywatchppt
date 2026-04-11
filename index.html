@@ -48,12 +48,12 @@
         }
     </style>
 </head>
-<body class="bg-slate-200 min-h-screen p-4 md:p-8 flex flex-col items-center">
+<body class="bg-slate-200 min-h-screen p-2 sm:p-4 md:p-8 flex flex-col items-center">
 
-    <div class="w-full max-w-5xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row aspect-video">
+    <div class="w-full max-w-5xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row md:aspect-video min-h-[65vh] md:min-h-0">
         
         <!-- Main Slide Area -->
-        <div class="flex-[2] p-8 flex flex-col justify-between relative overflow-hidden bg-white">
+        <div class="flex-[2] p-4 sm:p-6 md:p-8 flex flex-col justify-between relative overflow-hidden bg-white">
             <div class="flex justify-between items-start mb-6">
                 <div class="flex items-center gap-2">
                     <!-- <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white">
@@ -71,7 +71,7 @@
         </div>
 
         <!-- Presenter Sidebar -->
-        <div class="flex-1 bg-slate-900 text-white p-8 flex flex-col border-l border-slate-800">
+        <div class="hidden md:flex flex-1 bg-slate-900 text-white p-8 flex-col border-l border-slate-800">
             <div class="mb-8 flex-1 flex flex-col">
                 <h3 class="text-[10px] font-bold text-blue-400 uppercase tracking-widest mb-4"></h3>
                 <div id="presenter-script" class="text-lg leading-relaxed text-slate-200 italic font-serif flex-1 flex items-center justify-center">
@@ -92,6 +92,16 @@
         </div>
         <div id="dot-indicators" class="flex gap-1">
             <!-- Dots injected by JS -->
+        </div>
+        <button id="mobile-script-btn" onclick="toggleMobileScript()" class="md:hidden flex items-center gap-1 px-3 py-1.5 bg-slate-800 text-white text-xs rounded-full hover:bg-slate-700 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span id="mobile-script-label">Script</span>
+        </button>
+    </div>
+
+    <!-- Mobile Script Panel -->
+    <div id="mobile-script-panel" class="hidden w-full max-w-5xl bg-slate-900 text-white p-5 rounded-2xl shadow-xl mt-2 md:hidden">
+        <div id="mobile-presenter-script" class="text-base leading-relaxed text-slate-200 italic font-serif">
         </div>
     </div>
 
@@ -389,14 +399,22 @@
                                         <span class="text-[8px] text-white">LIVE</span>
                                     </div>
                                 </div>
-                                <div class="grid grid-cols-2 gap-2">
-                                    <div class="bg-white p-2 rounded-lg shadow border border-slate-100 text-center">
-                                        <i data-lucide="mic" class="h-4 w-4 mx-auto text-teal-500 mb-1"></i>
-                                        <div class="text-[8px] font-bold text-slate-700">Speak</div>
+                                <div class="grid grid-cols-2 gap-1.5">
+                                    <div class="bg-white p-1.5 rounded-lg shadow border border-slate-100 text-center">
+                                        <i data-lucide="mic" class="h-3.5 w-3.5 mx-auto text-teal-500 mb-0.5"></i>
+                                        <div class="text-[7px] font-bold text-slate-700">Speak</div>
                                     </div>
-                                    <div class="bg-white p-2 rounded-lg shadow border border-slate-100 text-center">
-                                        <i data-lucide="vibrate" class="h-4 w-4 mx-auto text-orange-500 mb-1"></i>
-                                        <div class="text-[8px] font-bold text-slate-700">Vibrate</div>
+                                    <div class="bg-white p-1.5 rounded-lg shadow border border-slate-100 text-center">
+                                        <i data-lucide="bone" class="h-3.5 w-3.5 mx-auto text-amber-500 mb-0.5"></i>
+                                        <div class="text-[7px] font-bold text-slate-700">Treat</div>
+                                    </div>
+                                    <div class="bg-white p-1.5 rounded-lg shadow border border-slate-100 text-center">
+                                        <i data-lucide="vibrate" class="h-3.5 w-3.5 mx-auto text-orange-500 mb-0.5"></i>
+                                        <div class="text-[7px] font-bold text-slate-700">Vibrate</div>
+                                    </div>
+                                    <div class="bg-white p-1.5 rounded-lg shadow border border-slate-100 text-center">
+                                        <i data-lucide="zap" class="h-3.5 w-3.5 mx-auto text-yellow-500 mb-0.5"></i>
+                                        <div class="text-[7px] font-bold text-slate-700">Zap</div>
                                     </div>
                                 </div>
                             </div>
@@ -492,22 +510,22 @@
                                         <span class="text-[8px] text-white">LIVE</span>
                                     </div>
                                 </div>
-                                <div class="grid grid-cols-2 gap-2">
-                                    <div class="bg-white p-2 rounded-lg shadow border border-slate-100 text-center">
-                                        <i data-lucide="lock" class="h-4 w-4 mx-auto text-indigo-500 mb-1"></i>
-                                        <div class="text-[8px] font-bold text-slate-700">Lock Crate</div>
+                                <div class="grid grid-cols-2 gap-1.5">
+                                    <div class="bg-white p-1.5 rounded-lg shadow border border-slate-100 text-center">
+                                        <i data-lucide="lock" class="h-3.5 w-3.5 mx-auto text-indigo-500 mb-0.5"></i>
+                                        <div class="text-[7px] font-bold text-slate-700">Lock Crate</div>
                                     </div>
-                                    <div class="bg-white p-2 rounded-lg shadow border border-slate-100 text-center">
-                                        <i data-lucide="fan" class="h-4 w-4 mx-auto text-pink-500 mb-1"></i>
-                                        <div class="text-[8px] font-bold text-slate-700">Ventilation</div>
+                                    <div class="bg-white p-1.5 rounded-lg shadow border border-slate-100 text-center">
+                                        <i data-lucide="fan" class="h-3.5 w-3.5 mx-auto text-pink-500 mb-0.5"></i>
+                                        <div class="text-[7px] font-bold text-slate-700">Ventilation</div>
                                     </div>
-                                    <div class="bg-white p-2 rounded-lg shadow border border-slate-100 text-center">
-                                        <i data-lucide="utensils" class="h-4 w-4 mx-auto text-pink-500 mb-1"></i>
-                                        <div class="text-[8px] font-bold text-slate-700">Food</div>
+                                    <div class="bg-white p-1.5 rounded-lg shadow border border-slate-100 text-center">
+                                        <i data-lucide="utensils" class="h-3.5 w-3.5 mx-auto text-pink-500 mb-0.5"></i>
+                                        <div class="text-[7px] font-bold text-slate-700">Food</div>
                                     </div>
-                                    <div class="bg-white p-2 rounded-lg shadow border border-slate-100 text-center">
-                                        <i data-lucide="droplet" class="h-4 w-4 mx-auto text-pink-500 mb-1"></i>
-                                        <div class="text-[8px] font-bold text-slate-700">Water</div>
+                                    <div class="bg-white p-1.5 rounded-lg shadow border border-slate-100 text-center">
+                                        <i data-lucide="droplet" class="h-3.5 w-3.5 mx-auto text-pink-500 mb-0.5"></i>
+                                        <div class="text-[7px] font-bold text-slate-700">Water</div>
                                     </div>
                                 </div>
                             </div>
@@ -591,18 +609,18 @@
                                         <span class="text-[8px] text-white" style="text-shadow: 0 1px 3px rgba(0,0,0,0.5);">GPS</span>
                                     </div>
                                 </div>
-                                <div class="grid grid-cols-3 gap-2">
-                                    <div class="bg-white p-2 rounded-lg shadow border border-slate-100 text-center">
-                                        <i data-lucide="vibrate" class="h-4 w-4 mx-auto text-orange-500 mb-1"></i>
-                                        <div class="text-[8px] font-bold text-slate-700">Vibrate</div>
+                                <div class="grid grid-cols-3 gap-1.5">
+                                    <div class="bg-white p-1.5 rounded-lg shadow border border-slate-100 text-center">
+                                        <i data-lucide="vibrate" class="h-3.5 w-3.5 mx-auto text-orange-500 mb-0.5"></i>
+                                        <div class="text-[7px] font-bold text-slate-700">Vibrate</div>
                                     </div>
-                                    <div class="bg-white p-2 rounded-lg shadow border border-slate-100 text-center">
-                                        <i data-lucide="zap" class="h-4 w-4 mx-auto text-yellow-500 mb-1"></i>
-                                        <div class="text-[8px] font-bold text-slate-700">Zap</div>
+                                    <div class="bg-white p-1.5 rounded-lg shadow border border-slate-100 text-center">
+                                        <i data-lucide="zap" class="h-3.5 w-3.5 mx-auto text-yellow-500 mb-0.5"></i>
+                                        <div class="text-[7px] font-bold text-slate-700">Zap</div>
                                     </div>
-                                    <div class="bg-white p-2 rounded-lg shadow border border-slate-100 text-center">
-                                        <i data-lucide="radar" class="h-4 w-4 mx-auto text-blue-500 mb-1"></i>
-                                        <div class="text-[8px] font-bold text-slate-700">Find Buddy</div>
+                                    <div class="bg-white p-1.5 rounded-lg shadow border border-slate-100 text-center">
+                                        <i data-lucide="radar" class="h-3.5 w-3.5 mx-auto text-blue-500 mb-0.5"></i>
+                                        <div class="text-[7px] font-bold text-slate-700">Find Buddy</div>
                                     </div>
                                 </div>
                             </div>
@@ -733,12 +751,15 @@
             scriptArea.innerHTML = slide.script;
 
             contentArea.innerHTML = `
-                ${slide.icon ? `<div class="transition-transform duration-500">${slide.icon}</div>` : ''}
-                ${slide.title ? `<h1 class="text-3xl md:text-4xl font-black text-slate-900 leading-tight max-w-2xl">${slide.title}</h1>` : ''}
-                <div class="w-full max-w-md">
+                ${slide.icon ? `<div class="transition-transform duration-500 scale-75 sm:scale-90 md:scale-100">${slide.icon}</div>` : ''}
+                ${slide.title ? `<h1 class="text-xl sm:text-3xl md:text-4xl font-black text-slate-900 leading-tight max-w-2xl">${slide.title}</h1>` : ''}
+                <div class="w-full max-w-full sm:max-w-md">
                     ${slide.content}
                 </div>
             `;
+
+            const mobileScript = document.getElementById('mobile-presenter-script');
+            if (mobileScript) mobileScript.innerHTML = slide.script;
 
             // Update Dots
             dotIndicators.innerHTML = slides.map((_, i) => `
@@ -757,6 +778,14 @@
         function prevSlide() {
             currentIndex = (currentIndex - 1 + slides.length) % slides.length;
             renderSlide();
+        }
+
+        function toggleMobileScript() {
+            const panel = document.getElementById('mobile-script-panel');
+            const label = document.getElementById('mobile-script-label');
+            const isHidden = panel.classList.toggle('hidden');
+            label.textContent = isHidden ? 'Script' : 'Close';
+            if (typeof lucide !== 'undefined') lucide.createIcons();
         }
 
         // Keyboard navigation
