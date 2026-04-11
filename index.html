@@ -210,8 +210,8 @@
                 icon: `<svg class="w-12 h-12 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 17 6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg>`,
                 content: `
                     <div class="grid grid-cols-3 gap-6 items-stretch">
-                        <div class="bg-teal-50 p-5 rounded-xl border border-teal-100 pop-shadow text-center flex flex-col">
-                            <div class="text-2xl font-black text-teal-600 mb-2">66%</div>
+                        <div style="background-color:#fffbe6;" class="rounded-xl border pop-shadow text-center flex flex-col">
+                            <div class="text-2xl font-black mb-2" style="color:#fde206;">66%</div>
                             <div class="text-xs text-slate-600 font-medium mt-auto">Of North American households own pets</div>
                         </div>
                         <div class="bg-orange-50 p-5 rounded-xl border border-orange-100 pop-shadow text-center flex flex-col">
@@ -334,7 +334,21 @@
                             <div class="bg-white/10 p-2 rounded text-[10px]">REACT</div>
                         </div>
                     </div>`,
-                script: "“Furrywatch connects monitoring, insights, and action into one seamless system.”"
+                                script: `<div class="not-italic flex justify-center">
+    <div class="relative mx-auto border-gray-800 bg-gray-800 border-[10px] rounded-[2rem] h-[420px] w-[210px] shadow-2xl overflow-hidden">
+        <div class="h-[24px] w-[2px] bg-gray-800 absolute -left-[12px] top-[50px] rounded-l-lg"></div>
+        <div class="h-[34px] w-[2px] bg-gray-800 absolute -left-[12px] top-[88px] rounded-l-lg"></div>
+        <div class="h-[34px] w-[2px] bg-gray-800 absolute -left-[12px] top-[128px] rounded-l-lg"></div>
+        <div class="h-[48px] w-[2px] bg-gray-800 absolute -right-[12px] top-[100px] rounded-r-lg"></div>
+        <div class="absolute inset-0 w-full h-full z-0">
+            <img src="Hero-dog.png" alt="Happy Dog" class="w-full h-full object-cover" />
+        </div>
+        <div class="absolute left-0 bottom-0 w-full flex flex-col items-start pl-5 pb-6 z-10">
+            <div class="font-bold text-white text-2xl font-sans tracking-tighter" style="text-shadow: 0 2px 12px rgba(0,0,0,0.32); letter-spacing: -0.04em;">AURA</div>
+            <div class="font-bold text-white text-xs font-sans mt-1 opacity-90" style="text-shadow: 0 2px 12px rgba(0,0,0,0.32);">by FurryWatch<sup style='font-size:0.7em;vertical-align:super;'>™</sup></div>
+        </div>
+    </div>
+</div>`
             },
             {   title: "Three Devices. One Mind.",
                 icon: ``,
@@ -342,15 +356,15 @@
                     <div class="grid grid-cols-3 gap-2 w-full" style="min-width:0;">
                         <!-- Camera -->
                         <div class="bg-white rounded-xl p-4 border border-slate-200/60 pop-shadow text-left space-y-2 min-w-0">
-                            <div class="h-10 w-10 bg-teal-100 rounded-lg flex items-center justify-center mx-auto">
-                                <svg class="w-5 h-5 text-teal-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg>
+                            <div class="h-10 w-10 rounded-lg flex items-center justify-center mx-auto" style="background-color:#fffbe6;">
+                                <svg class="w-5 h-5" style="color:#fde206;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg>
                             </div>
                             <div class="text-sm font-bold text-slate-800">Sentinel Smart Camera</div>
                             <p class="text-xs text-slate-500 leading-snug">AI-powered monitoring — distinguishes playing, sleeping & distress.</p>
                             <ul class="space-y-1 text-xs text-slate-400">
-                                <li class="flex items-center gap-1"><span class="text-teal-500">✓</span> 1080p Night Vision</li>
-                                <li class="flex items-center gap-1"><span class="text-teal-500">✓</span> Two-way Audio</li>
-                                <li class="flex items-center gap-1"><span class="text-teal-500">✓</span> Treat Dispenser Compatible</li>
+                                <li class="flex items-center gap-1"><span style="color:#fde206;">✓</span> 1080p Night Vision</li>
+                                <li class="flex items-center gap-1"><span style="color:#fde206;">✓</span> Two-way Audio</li>
+                                <li class="flex items-center gap-1"><span style="color:#fde206;">✓</span> Treat Dispenser Compatible</li>
                             </ul>
                         </div>
                         <!-- Collar -->
@@ -387,14 +401,14 @@
                         <div class="h-[34px] w-[2px] bg-gray-800 absolute -left-[12px] top-[128px] rounded-l-lg"></div>
                         <div class="h-[48px] w-[2px] bg-gray-800 absolute -right-[12px] top-[100px] rounded-r-lg"></div>
                         <div class="rounded-[1.5rem] overflow-hidden w-full h-full bg-slate-100 relative">
-                            <div class="bg-teal-600 h-24 p-4 text-white rounded-b-2xl">
+                            <div class="h-24 p-4 text-black rounded-b-2xl" style="background-color:#fde206;">
                                 <div class="flex justify-between items-center mt-2">
                                     <div>
                                         <div class="text-[9px] opacity-80">Good Morning,</div>
                                         <div class="font-bold text-sm">Buddy is Active</div>
                                     </div>
                                     <div class="h-7 w-7 bg-white/20 rounded-full flex items-center justify-center">
-                                        <i data-lucide="dog" class="h-4 w-4"></i>
+                                        <i data-lucide="menu" class="h-4 w-4"></i>
                                     </div>
                                 </div>
                             </div>
@@ -427,7 +441,7 @@
                                 </div>
                                 <div class="grid grid-cols-2 gap-1.5">
                                     <div class="bg-white p-1.5 rounded-lg shadow border border-slate-100 text-center">
-                                        <i data-lucide="mic" class="h-3.5 w-3.5 mx-auto text-teal-500 mb-0.5"></i>
+                                        <i data-lucide="mic" class="h-3.5 w-3.5 mx-auto mb-0.5" style="color:#fde206;"></i>
                                         <div class="text-[7px] font-bold text-slate-700">Speak</div>
                                     </div>
                                     <div class="bg-white p-1.5 rounded-lg shadow border border-slate-100 text-center">
@@ -497,14 +511,14 @@
                         <div class="h-[34px] w-[2px] bg-gray-800 absolute -left-[12px] top-[128px] rounded-l-lg"></div>
                         <div class="h-[48px] w-[2px] bg-gray-800 absolute -right-[12px] top-[100px] rounded-r-lg"></div>
                         <div class="rounded-[1.5rem] overflow-hidden w-full h-full bg-slate-100 relative">
-                            <div class="bg-teal-600 h-24 p-4 text-white rounded-b-2xl">
+                            <div class="h-24 p-4 text-black rounded-b-2xl" style="background-color:#fde206;">
                                 <div class="flex justify-between items-center mt-2">
                                     <div>
                                         <div class="text-[9px] opacity-80">Good Morning,</div>
                                         <div class="font-bold text-sm">Buddy is Active</div>
                                     </div>
                                     <div class="h-7 w-7 bg-white/20 rounded-full flex items-center justify-center">
-                                        <i data-lucide="dog" class="h-4 w-4"></i>
+                                        <i data-lucide="menu" class="h-4 w-4"></i>
                                     </div>
                                 </div>
                             </div>
@@ -593,14 +607,14 @@
                         <div class="h-[34px] w-[2px] bg-gray-800 absolute -left-[12px] top-[128px] rounded-l-lg"></div>
                         <div class="h-[48px] w-[2px] bg-gray-800 absolute -right-[12px] top-[100px] rounded-r-lg"></div>
                         <div class="rounded-[1.5rem] overflow-hidden w-full h-full bg-slate-100 relative">
-                            <div class="bg-teal-600 h-24 p-4 text-white rounded-b-2xl">
+                            <div class="h-24 p-4 text-black rounded-b-2xl" style="background-color:#fde206;">
                                 <div class="flex justify-between items-center mt-2">
                                     <div>
                                         <div class="text-[9px] opacity-80">Good Morning,</div>
                                         <div class="font-bold text-sm">Buddy is Active</div>
                                     </div>
                                     <div class="h-7 w-7 bg-white/20 rounded-full flex items-center justify-center">
-                                        <i data-lucide="dog" class="h-4 w-4"></i>
+                                        <i data-lucide="menu" class="h-4 w-4"></i>
                                     </div>
                                 </div>
                             </div>
