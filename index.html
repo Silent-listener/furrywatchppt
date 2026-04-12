@@ -168,24 +168,71 @@
                         </div>
                     </div>
                     
-                    <!-- Central iPhone Mockup -->
-                    <div class="relative w-[4.2rem] h-[8.5rem] bg-black rounded-[0.6rem] border-[2.5px] border-gray-800 shadow-2xl flex flex-col overflow-hidden z-10">
-                        <!-- Dynamic Island -->
-                        <div class="w-[1.4rem] h-[0.35rem] bg-black absolute top-[0.25rem] left-1/2 -translate-x-1/2 rounded-full z-20"></div>
-                        <!-- Side Button (right) -->
-                        <div class="absolute -right-[3px] top-[2.8rem] w-[2.5px] h-4 bg-gray-700 rounded-r-sm"></div>
-                        <!-- Volume Buttons (left) -->
-                        <div class="absolute -left-[3px] top-[2.2rem] w-[2.5px] h-2.5 bg-gray-700 rounded-l-sm"></div>
-                        <div class="absolute -left-[3px] top-[3.2rem] w-[2.5px] h-2.5 bg-gray-700 rounded-l-sm"></div>
-                        <!-- Screen -->
-                        <div class="flex-1 bg-gradient-to-b from-blue-500 to-indigo-600 m-[2px] rounded-[0.4rem] p-1 pt-4 flex flex-col gap-1 overflow-hidden">
-                            <div class="h-1 w-6 bg-white/20 rounded-full"></div>
-                            <div class="flex-1 bg-white/10 rounded flex items-center justify-center">
-                                <svg class="w-6 h-6 text-white/40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.7 1h5.9a2 2 0 0 1 2 2v4.5"/><path d="M16 22a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2z"/></svg>
+                    <!-- Central iPhone Mockup: Use the actual dummy screen from Three Devices slide -->
+                    <div class="relative mx-auto border-gray-800 bg-gray-800 border-[4px] rounded-[0.9rem] h-[145px] w-[80px] shadow-2xl flex flex-col overflow-hidden z-10">
+                        <!-- Dynamic Island (smaller, flush with top bezel) -->
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-7 h-1 bg-black/80 rounded-full z-20 border border-black/30"></div>
+                        <div class="h-[8px] w-[1.5px] bg-gray-800 absolute -left-[3.5px] top-[18px] rounded-l-lg"></div>
+                        <div class="h-[10px] w-[1.5px] bg-gray-800 absolute -left-[3.5px] top-[32px] rounded-l-lg"></div>
+                        <div class="h-[10px] w-[1.5px] bg-gray-800 absolute -left-[3.5px] top-[46px] rounded-l-lg"></div>
+                        <div class="h-[16px] w-[1.5px] bg-gray-800 absolute -right-[3.5px] top-[36px] rounded-r-lg"></div>
+                        <div class="rounded-[0.5rem] overflow-hidden w-full h-full bg-slate-100 relative">
+                            <div class="h-8 p-1 text-black rounded-b-lg mt-0" style="background-color:#fde206; border-top-left-radius:0.45rem; border-top-right-radius:0.45rem;">
+                                <div class="flex justify-between items-center mt-0.5">
+                                    <div>
+                                        <div class="font-bold text-[8px] leading-none">Buddy is Active</div>
+                                    </div>
+                                    <div class="h-3 w-3 bg-white/20 rounded-full flex items-center justify-center">
+                                        <i data-lucide="menu" class="h-2 w-2"></i>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="h-5 w-full bg-white/20 rounded"></div>
-                            <!-- Home Indicator -->
-                            <div class="w-6 h-[2px] bg-white/50 rounded-full mx-auto mb-0.5"></div>
+                            <div class="p-1 space-y-1 -mt-1">
+                                <div class="bg-white p-1 rounded-lg shadow flex items-center justify-between">
+                                    <div class="flex items-center space-x-1">
+                                        <div class="bg-green-100 p-1 rounded-md">
+                                            <i data-lucide="heart-pulse" class="h-2 w-2 text-green-600"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-[5px] text-gray-500 leading-none">Heart Rate</div>
+                                            <div class="font-bold text-[6px] text-slate-800 leading-none">78 BPM</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-[5px] text-green-600 bg-green-50 px-1 py-[1.5px] rounded">Normal</div>
+                                </div>
+                                <div class="rounded-lg shadow overflow-hidden h-9 relative">
+                                    <div class="absolute inset-0 flex items-center justify-center bg-center bg-cover bg-no-repeat" style="background-image: url('dog-barking-home.jpg');">
+                                        <i data-lucide="play-circle" class="h-3 w-3 text-white opacity-80"></i>
+                                    </div>
+                                    <div class="absolute bottom-1 left-1 text-white text-[5px] font-bold">Living Room Cam</div>
+                                    <div class="absolute bottom-1 right-1 flex items-center space-x-0.5 text-white text-[4px] opacity-80">
+                                        <i data-lucide="switch-camera" class="h-1.5 w-1.5"></i>
+                                        <span>Change</span>
+                                    </div>
+                                    <div class="absolute top-1 right-1 flex items-center space-x-0.5">
+                                        <div class="h-1 w-1 bg-red-500 rounded-full animate-pulse"></div>
+                                        <span class="text-[5px] text-white">LIVE</span>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-1">
+                                    <div class="bg-white p-1 rounded-lg shadow border border-slate-100 text-center">
+                                        <i data-lucide="mic" class="h-2 w-2 mx-auto mb-0.5" style="color:#fde206;"></i>
+                                        <div class="text-[4px] font-bold text-slate-700">Speak</div>
+                                    </div>
+                                    <div class="bg-white p-1 rounded-lg shadow border border-slate-100 text-center">
+                                        <i data-lucide="bone" class="h-2 w-2 mx-auto text-amber-500 mb-0.5"></i>
+                                        <div class="text-[4px] font-bold text-slate-700">Treat</div>
+                                    </div>
+                                    <div class="bg-white p-1 rounded-lg shadow border border-slate-100 text-center">
+                                        <i data-lucide="vibrate" class="h-2 w-2 mx-auto text-orange-500 mb-0.5"></i>
+                                        <div class="text-[4px] font-bold text-slate-700">Vibrate</div>
+                                    </div>
+                                    <div class="bg-red-500 p-1 rounded-lg shadow border border-red-600 text-center">
+                                        <i data-lucide="zap" class="h-2 w-2 mx-auto text-yellow-300 mb-0.5"></i>
+                                        <div class="text-[4px] font-bold text-white">Zap</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
@@ -375,9 +422,10 @@
                             <div class="text-sm font-bold text-slate-800">Guardian GPS Collar</div>
                             <p class="text-xs text-slate-500 leading-snug">Real-time location tracking combined with vital sign monitoring.</p>
                             <ul class="space-y-1 text-xs text-slate-400">
-                                <li class="flex items-center gap-1"><span class="text-orange-500">✓</span> Global LTE Tracking</li>
-                                <li class="flex items-center gap-1"><span class="text-orange-500">✓</span> Activity & Sleep Analysis</li>
                                 <li class="flex items-center gap-1"><span class="text-orange-500">✓</span> Smart Training</li>
+                                <li class="flex items-center gap-1"><span class="text-orange-500">✓</span> Corrective Measures</li>
+                                <li class="flex items-center gap-1"><span class="text-orange-500">✓</span> Activity & Sleep Analysis</li>
+                                <li class="flex items-center gap-1"><span class="text-orange-500">✓</span> Global LTE Tracking</li>
                             </ul>
                         </div>
                         <!-- Crate -->
@@ -390,7 +438,7 @@
                             <ul class="space-y-1 text-xs text-slate-400">
                                 <li class="flex items-center gap-1"><span class="text-indigo-500">✓</span> Auto-locking Mechanism</li>
                                 <li class="flex items-center gap-1"><span class="text-indigo-500">✓</span> Treat & Food Dispenser</li>
-                                <li class="flex items-center gap-1"><span class="text-indigo-500">✓</span> Climate Sensor</li>
+                                <li class="flex items-center gap-1"><span class="text-indigo-500">✓</span> Climate Control</li>
                             </ul>
                         </div>
                     </div>`,
